@@ -1,0 +1,62 @@
+---
+title: "Welcome"
+---
+
+Welcome to the [effective data visualisation with R]{style="color:#006DAE;"} workshop!
+
+
+<i class="fas fa-calendar" style="width:40px;"></i>  Tuesday 6th December 2022  
+<i class="fas fa-clock" style="width:40px;"></i>   9.00AM - 12.00PM AEDT  
+<i class="fas fa-map-pin" style="width:40px;"></i>  Zoom (links provided to participants via email)
+
+## Materials
+
+All materials are hosted on a GitHub repo [here]() and can be downloaded [here as a zip file]() (including the website, slides and exercises).
+
+Once the material is downloaded, open the `docs/index.html` in a browser to see this website. 
+
+## Installation
+
+```{r}
+#| eval: false
+install.packages(c("remotes", "learnr"))
+remotes::install_github("emitanaka/EDVR-workshop/pkg")
+```
+
+
+## Schedule
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(lubridate)
+schedule <- read_csv("slides/schedule.csv")
+schedule %>% 
+  arrange(Start) %>% 
+  mutate(time = glue::glue("{sprintf('%.2d', hour(Start))}:{sprintf('%.2d', minute(Start))} - {sprintf('%.2d', hour(End))}:{sprintf('%.2d', minute(End))}"),
+         url = case_when(Type=="Session" | Activity == "Introduction" ~ sprintf("[<i class='fab fa-html5'></i>](slides/slide-%.2d.html)", No),
+                         TRUE ~ ""),
+         Activity = case_when(Type=="Practice" ~ paste('<em>Exercise</em>', sprintf("[<i class='fas fa-tools'></i>](https://ebsmonash.shinyapps.io/edvr-ex%.2d/)", No)),
+                              Type=="Session" & No %in% 1:3 ~ paste0("<span style='color:#006DAE;'>", Activity, "</span>"),
+                              
+                              TRUE ~ Activity)) %>% 
+  select(Time = time, url, Activity) %>% 
+  knitr::kable(col.names = c("Time", "Slides", "Activity"),
+               align = "lcl")
+```
+
+
+## Exercises 
+
+
+To run the exercises locally, install the packages under [Installation](#installation) and then run:
+
+```{r}
+#| eval: false
+learnr::run_tutorial("exercise-01", package = "edvr.workshop")
+learnr::run_tutorial("exercise-02", package = "edvr.workshop")
+```
+

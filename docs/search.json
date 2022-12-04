@@ -1,0 +1,401 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to the effective data visualisation with R workshop!\nTuesday 6th December 2022\n 9.00AM - 12.00PM AEDT\n Zoom (links provided to participants via email)"
+  },
+  {
+    "objectID": "index.html#materials",
+    "href": "index.html#materials",
+    "title": "Welcome",
+    "section": "Materials",
+    "text": "Materials\nAll materials are hosted on a GitHub repo here and can be downloaded here as a zip file (including the website, slides and exercises).\nOnce the material is downloaded, open the docs/index.html in a browser to see this website."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Welcome",
+    "section": "Installation",
+    "text": "Installation\n\ninstall.packages(c(\"remotes\", \"learnr\"))\nremotes::install_github(\"emitanaka/EDVR-workshop/pkg\")"
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\nTime\nSlides\nActivity\n\n\n\n\n09:00 - 09:15\n\nIntroduction\n\n\n09:15 - 10:00\n\nCreating plots with ggplot2\n\n\n10:00 - 10:15\n\nExercise \n\n\n10:15 - 10:45\n\nFundamentals of data visualisation\n\n\n10:45 - 11:00\n\nExercise \n\n\n11:00 - 11:45\n\nElements of effective data visualisation\n\n\n11:45 - 12:00\n\nWrap-up"
+  },
+  {
+    "objectID": "index.html#exercises",
+    "href": "index.html#exercises",
+    "title": "Welcome",
+    "section": "Exercises",
+    "text": "Exercises\nTo run the exercises locally, install the packages under Installation and then run:\n\nlearnr::run_tutorial(\"exercise-01\", package = \"edvr.workshop\")\nlearnr::run_tutorial(\"exercise-02\", package = \"edvr.workshop\")"
+  },
+  {
+    "objectID": "slides/slide-01.html#title-slide",
+    "href": "slides/slide-01.html#title-slide",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Basics of creating plots with ggplot2\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
+  },
+  {
+    "objectID": "slides/slide-01.html#summary-of-r-graphics",
+    "href": "slides/slide-01.html#summary-of-r-graphics",
+    "title": "Effective Data Visualisation with R",
+    "section": "Summary of R graphics",
+    "text": "Summary of R graphics"
+  },
+  {
+    "objectID": "slides/slide-01.html#basic-structure-of-ggplot",
+    "href": "slides/slide-01.html#basic-structure-of-ggplot",
+    "title": "Effective Data Visualisation with R",
+    "section": "Basic structure of ggplot",
+    "text": "Basic structure of ggplot\n\n\ndata as data.frame\na set of aesthetic mappings between variables in the data and visual properties\nat least one layer which describes how to render each observation"
+  },
+  {
+    "objectID": "slides/slide-01.html#a-layer-in-ggplot",
+    "href": "slides/slide-01.html#a-layer-in-ggplot",
+    "title": "Effective Data Visualisation with R",
+    "section": "A layer in ggplot",
+    "text": "A layer in ggplot\n\nA layer has five main components:\n\ngeom - the geometric object to use display the data\nstat - statistical transformation to use on the data\ndata - data to be displayed in this layer (usually inherited)\nmapping - aesthetic mappings (usually inherited)\nposition - position adjustment"
+  },
+  {
+    "objectID": "slides/slide-01.html#illustrative-data-palmer-penguins",
+    "href": "slides/slide-01.html#illustrative-data-palmer-penguins",
+    "title": "Effective Data Visualisation with R",
+    "section": "Illustrative data  Palmer penguins",
+    "text": "Illustrative data  Palmer penguins\npenguins data is from the palmerpenguins 📦\n\nlibrary(palmerpenguins)\nstr(penguins)\n\ntibble [344 × 8] (S3: tbl_df/tbl/data.frame)\n $ species          : Factor w/ 3 levels \"Adelie\",\"Chinstrap\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ island           : Factor w/ 3 levels \"Biscoe\",\"Dream\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...\n $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...\n $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...\n $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...\n $ sex              : Factor w/ 2 levels \"female\",\"male\": 2 1 1 NA 1 2 1 2 NA NA ...\n $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...\n\n\n \n\n\nGorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081."
+  },
+  {
+    "objectID": "slides/slide-01.html#a-histogram-with-geom_histogram",
+    "href": "slides/slide-01.html#a-histogram-with-geom_histogram",
+    "title": "Effective Data Visualisation with R",
+    "section": "A histogram with geom_histogram()",
+    "text": "A histogram with geom_histogram()\n\nggplot(data = penguins, \n       mapping = aes(x = bill_depth_mm)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\n\nBy default ggplot2 uses 30 bins (bins = 30) when drawing histograms."
+  },
+  {
+    "objectID": "slides/slide-01.html#other-layers-for-univariate-data",
+    "href": "slides/slide-01.html#other-layers-for-univariate-data",
+    "title": "Effective Data Visualisation with R",
+    "section": "Other layers for univariate data",
+    "text": "Other layers for univariate data\n\np <- ggplot(penguins, aes(bill_depth_mm))\n\n\n\n\np + geom_density() \n\n\n\n\n\n\n\n\n\n\n\np + geom_freqpoly()\n\n\n\n\n\n\n\n\n\n\n\np + geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\n\n\np + geom_violin(aes(y = \"\"))\n\n\n\n\n\n\n\n\n\n\n\np + geom_dotplot()\n\n\n\n\n\n\n\n\n\n\n\n\nThe default geom_freqpoly is showing the same statistic (stat = \"bin\") as the default geom_histogram except one is using a bar (geom = \"bar\") and the other is using a line (geom = \"path\")."
+  },
+  {
+    "objectID": "slides/slide-01.html#available-geom-layers-in-ggplot2",
+    "href": "slides/slide-01.html#available-geom-layers-in-ggplot2",
+    "title": "Effective Data Visualisation with R",
+    "section": "Available geom layers in ggplot2",
+    "text": "Available geom layers in ggplot2"
+  },
+  {
+    "objectID": "slides/slide-01.html#layer-data",
+    "href": "slides/slide-01.html#layer-data",
+    "title": "Effective Data Visualisation with R",
+    "section": "Layer data",
+    "text": "Layer data\n\nghist <- ggplot(data = penguins, \n                mapping = aes(x = bill_depth_mm)) +\n  geom_histogram() \n\nlayer_data(ghist, 1)\n\n    y count        x     xmin     xmax    density     ncount   ndensity\n1   1     1 13.03448 12.88966 13.17931 0.01009468 0.03846154 0.03846154\n2   3     3 13.32414 13.17931 13.46897 0.03028404 0.11538462 0.11538462\n3   9     9 13.61379 13.46897 13.75862 0.09085213 0.34615385 0.34615385\n4  10    10 13.90345 13.75862 14.04828 0.10094681 0.38461538 0.38461538\n5  13    13 14.19310 14.04828 14.33793 0.13123085 0.50000000 0.50000000\n6  18    18 14.48276 14.33793 14.62759 0.18170426 0.69230769 0.69230769\n7   6     6 14.77241 14.62759 14.91724 0.06056809 0.23076923 0.23076923\n8  17    17 15.06207 14.91724 15.20690 0.17160958 0.65384615 0.65384615\n9   6     6 15.35172 15.20690 15.49655 0.06056809 0.23076923 0.23076923\n10 11    11 15.64138 15.49655 15.78621 0.11104149 0.42307692 0.42307692\n11 13    13 15.93103 15.78621 16.07586 0.13123085 0.50000000 0.50000000\n12 13    13 16.22069 16.07586 16.36552 0.13123085 0.50000000 0.50000000\n13 12    12 16.51034 16.36552 16.65517 0.12113617 0.46153846 0.46153846\n14  8     8 16.80000 16.65517 16.94483 0.08075745 0.30769231 0.30769231\n15 26    26 17.08966 16.94483 17.23448 0.26246171 1.00000000 1.00000000\n16 16    16 17.37931 17.23448 17.52414 0.16151490 0.61538462 0.61538462\n17 15    15 17.66897 17.52414 17.81379 0.15142022 0.57692308 0.57692308\n18 24    24 17.95862 17.81379 18.10345 0.24227235 0.92307692 0.92307692\n19  9     9 18.24828 18.10345 18.39310 0.09085213 0.34615385 0.34615385\n20 25    25 18.53793 18.39310 18.68276 0.25236703 0.96153846 0.96153846\n21 22    22 18.82759 18.68276 18.97241 0.22208299 0.84615385 0.84615385\n22 18    18 19.11724 18.97241 19.26207 0.18170426 0.69230769 0.69230769\n23 13    13 19.40690 19.26207 19.55172 0.13123085 0.50000000 0.50000000\n24  8     8 19.69655 19.55172 19.84138 0.08075745 0.30769231 0.30769231\n25 10    10 19.98621 19.84138 20.13103 0.10094681 0.38461538 0.38461538\n26  4     4 20.27586 20.13103 20.42069 0.04037872 0.15384615 0.15384615\n27  5     5 20.56552 20.42069 20.71034 0.05047341 0.19230769 0.19230769\n28  1     1 20.85517 20.71034 21.00000 0.01009468 0.03846154 0.03846154\n29  5     5 21.14483 21.00000 21.28966 0.05047341 0.19230769 0.19230769\n30  1     1 21.43448 21.28966 21.57931 0.01009468 0.03846154 0.03846154\n   flipped_aes PANEL group ymin ymax colour   fill linewidth linetype alpha\n1        FALSE     1    -1    0    1     NA grey35       0.5        1    NA\n2        FALSE     1    -1    0    3     NA grey35       0.5        1    NA\n3        FALSE     1    -1    0    9     NA grey35       0.5        1    NA\n4        FALSE     1    -1    0   10     NA grey35       0.5        1    NA\n5        FALSE     1    -1    0   13     NA grey35       0.5        1    NA\n6        FALSE     1    -1    0   18     NA grey35       0.5        1    NA\n7        FALSE     1    -1    0    6     NA grey35       0.5        1    NA\n8        FALSE     1    -1    0   17     NA grey35       0.5        1    NA\n9        FALSE     1    -1    0    6     NA grey35       0.5        1    NA\n10       FALSE     1    -1    0   11     NA grey35       0.5        1    NA\n11       FALSE     1    -1    0   13     NA grey35       0.5        1    NA\n12       FALSE     1    -1    0   13     NA grey35       0.5        1    NA\n13       FALSE     1    -1    0   12     NA grey35       0.5        1    NA\n14       FALSE     1    -1    0    8     NA grey35       0.5        1    NA\n15       FALSE     1    -1    0   26     NA grey35       0.5        1    NA\n16       FALSE     1    -1    0   16     NA grey35       0.5        1    NA\n17       FALSE     1    -1    0   15     NA grey35       0.5        1    NA\n18       FALSE     1    -1    0   24     NA grey35       0.5        1    NA\n19       FALSE     1    -1    0    9     NA grey35       0.5        1    NA\n20       FALSE     1    -1    0   25     NA grey35       0.5        1    NA\n21       FALSE     1    -1    0   22     NA grey35       0.5        1    NA\n22       FALSE     1    -1    0   18     NA grey35       0.5        1    NA\n23       FALSE     1    -1    0   13     NA grey35       0.5        1    NA\n24       FALSE     1    -1    0    8     NA grey35       0.5        1    NA\n25       FALSE     1    -1    0   10     NA grey35       0.5        1    NA\n26       FALSE     1    -1    0    4     NA grey35       0.5        1    NA\n27       FALSE     1    -1    0    5     NA grey35       0.5        1    NA\n28       FALSE     1    -1    0    1     NA grey35       0.5        1    NA\n29       FALSE     1    -1    0    5     NA grey35       0.5        1    NA\n30       FALSE     1    -1    0    1     NA grey35       0.5        1    NA"
+  },
+  {
+    "objectID": "slides/slide-01.html#accessing-layer-data",
+    "href": "slides/slide-01.html#accessing-layer-data",
+    "title": "Effective Data Visualisation with R",
+    "section": "Accessing layer data",
+    "text": "Accessing layer data\n\nggplot(data = penguins, \n       mapping = aes(x = bill_depth_mm)) +\n  geom_histogram(aes(y = after_stat(density))) \n\n\n\n\n\n\n\n\n\nEquivalent to the old syntaxes y = stat(density) and y = ..density..\n\n\n\nIn this plot, the y-axis is showing density instead of count.\nThis is signalled by using y = after_stat(density).\nThis syntax is equivalent to y = stat(density) or y = ..density.., which was the old syntax to refer to computed statistics."
+  },
+  {
+    "objectID": "slides/slide-01.html#statistical-transformations",
+    "href": "slides/slide-01.html#statistical-transformations",
+    "title": "Effective Data Visualisation with R",
+    "section": "Statistical transformations",
+    "text": "Statistical transformations\n\nFor geom_histogram(), the default is stat = \"bin\".\nFor stat_bin(), the default is geom = \"bar\".\nEvery geom has a stat and vice versa\n\n\n\n\np + geom_histogram()\n\n\n\n\n\n\n\n\n\n\n\np + stat_bin(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\np + stat_bin(geom = \"line\")"
+  },
+  {
+    "objectID": "slides/slide-01.html#available-stat-layers-in-ggplot2",
+    "href": "slides/slide-01.html#available-stat-layers-in-ggplot2",
+    "title": "Effective Data Visualisation with R",
+    "section": "Available stat layers in ggplot2",
+    "text": "Available stat layers in ggplot2"
+  },
+  {
+    "objectID": "slides/slide-01.html#aesthetic-specifications",
+    "href": "slides/slide-01.html#aesthetic-specifications",
+    "title": "Effective Data Visualisation with R",
+    "section": "Aesthetic specifications",
+    "text": "Aesthetic specifications\nvignette(\"ggplot2-specs\")\n\nAesthetic arguments for each layer are found in documentation (e.g. ?geom_point).\nSome common aesthetic specifications are:\n\n\n\nx and y\n\n\n\nalpha\n\n\n\ncolor\n\n\n\nfill\n\n\n\nsize"
+  },
+  {
+    "objectID": "slides/slide-01.html#example-a-scatterplot-with-geom_point",
+    "href": "slides/slide-01.html#example-a-scatterplot-with-geom_point",
+    "title": "Effective Data Visualisation with R",
+    "section": "Example: a scatterplot with geom_point()",
+    "text": "Example: a scatterplot with geom_point()\n\n\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nggplot(penguins, \n       aes(x = bill_depth_mm, \n           y = bill_length_mm,\n           color = species,\n           size = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\nNotice that legends are automatically made for aesthetics"
+  },
+  {
+    "objectID": "slides/slide-01.html#aesthetic-specification-for-points",
+    "href": "slides/slide-01.html#aesthetic-specification-for-points",
+    "title": "Effective Data Visualisation with R",
+    "section": "Aesthetic specification for points",
+    "text": "Aesthetic specification for points\n\n\nshape\n\n\n\nstroke vs size\n\n\n\n\n\nThe default shape is “circle”.\nstroke and fill is only for the “filled” shapes."
+  },
+  {
+    "objectID": "slides/slide-01.html#aesthetic-specifications-for-lines",
+    "href": "slides/slide-01.html#aesthetic-specifications-for-lines",
+    "title": "Effective Data Visualisation with R",
+    "section": "Aesthetic specifications for lines",
+    "text": "Aesthetic specifications for lines\n\n\ncolor\n\n\n\nlinetype\n\n\n\nlinewidth\n\n\n\nlineend\n\n\n\nlinejoin"
+  },
+  {
+    "objectID": "slides/slide-01.html#aesthetic-or-attribute",
+    "href": "slides/slide-01.html#aesthetic-or-attribute",
+    "title": "Effective Data Visualisation with R",
+    "section": "Aesthetic or Attribute?",
+    "text": "Aesthetic or Attribute?\n\nggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +\n  geom_point(aes(color = \"dodgerblue\"))\n\n\n\n\n\n\n\n\n\n\n\n\nWhen you supply values within aes, it assumes that it’s a data variable.\nThe string \"dodgerblue\" gets converted into a variable with one level and it gets colored by ggplot’s default color palette."
+  },
+  {
+    "objectID": "slides/slide-01.html#when-your-input-is-an-attribute",
+    "href": "slides/slide-01.html#when-your-input-is-an-attribute",
+    "title": "Effective Data Visualisation with R",
+    "section": "When your input is an attribute",
+    "text": "When your input is an attribute\nDon’t put attributes inside aes()!\n\nggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +\n  geom_point(color = \"dodgerblue\")"
+  },
+  {
+    "objectID": "slides/slide-01.html#bonus-tip-as-is-operator",
+    "href": "slides/slide-01.html#bonus-tip-as-is-operator",
+    "title": "Effective Data Visualisation with R",
+    "section": "Bonus tip: “as-is” operator",
+    "text": "Bonus tip: “as-is” operator\n\nUse I() operator to mean “as-is” in aesthetic mapping.\n\n\nggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +\n  geom_point(aes(color = I(\"dodgerblue\")))"
+  },
+  {
+    "objectID": "slides/slide-01.html#attributes-are-for-layers",
+    "href": "slides/slide-01.html#attributes-are-for-layers",
+    "title": "Effective Data Visualisation with R",
+    "section": "Attributes are for layers",
+    "text": "Attributes are for layers\n\nAttributes should be defined in specific layers.\n\n\nggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm),\n       color = \"dodgerblue\") +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\nNotice how the points don’t have the “dodgeblue” color.\nLayers inherit data and the mapping from ggplot() but not attributes like this."
+  },
+  {
+    "objectID": "slides/slide-00.html#title-slide",
+    "href": "slides/slide-00.html#title-slide",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Introduction\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
+  },
+  {
+    "objectID": "slides/slide-00.html#section",
+    "href": "slides/slide-00.html#section",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Emi Tanaka\nSenior Lecturer in Statistics\nMonash University\n\n https://emitanaka.org/\n emi.tanaka@monash.edu\n @statsgen\n\n\n\nAbout your instructor\n\nI am an academic at Monash Univeristy in Clayton campus, Australia\nI teach R at university courses as well as use it daily for research and hobby \nMy childhood dream is to be a comic artist \n\n\n\n\n\n\nAbout your helper\n\n\nCynthia Huang\nPhD Student\nMonash University\n\n https://emitanaka.org/\n emi.tanaka@monash.edu\n @statsgen"
+  },
+  {
+    "objectID": "slides/slide-00.html#introduce-yourself-in-the-chat",
+    "href": "slides/slide-00.html#introduce-yourself-in-the-chat",
+    "title": "Effective Data Visualisation with R",
+    "section": " Introduce yourself in the chat!",
+    "text": "Introduce yourself in the chat!\n\nWhat’s your profession?\n\nWhere do you live?\nWhat’s your hobby?\nWhat would you like for people to know about you?\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/slide-00.html#help-me",
+    "href": "slides/slide-00.html#help-me",
+    "title": "Effective Data Visualisation with R",
+    "section": " Help me!",
+    "text": "Help me!\n\nYou can write in the chat.\nYou can raise hand from zoom, then unmute yourself to ask.\n\n\n\n\n\nYou can alert Cynthia and go to a breakout room."
+  },
+  {
+    "objectID": "slides/slide-00.html#why-data-visualisation",
+    "href": "slides/slide-00.html#why-data-visualisation",
+    "title": "Effective Data Visualisation with R",
+    "section": "Why data visualisation?",
+    "text": "Why data visualisation?\nData visualisation is a powerful tool to explore, understand and communicate data\n\nTablePlot"
+  },
+  {
+    "objectID": "slides/slide-00.html#what-data-visualisation-to-use",
+    "href": "slides/slide-00.html#what-data-visualisation-to-use",
+    "title": "Effective Data Visualisation with R",
+    "section": "What data visualisation to use?",
+    "text": "What data visualisation to use?"
+  },
+  {
+    "objectID": "slides/slide-00.html#schedule",
+    "href": "slides/slide-00.html#schedule",
+    "title": "Effective Data Visualisation with R",
+    "section": "Schedule",
+    "text": "Schedule"
+  },
+  {
+    "objectID": "slides/slide-02.html#title-slide",
+    "href": "slides/slide-02.html#title-slide",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Fundamentals of data visualisation\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
+  },
+  {
+    "objectID": "slides/slide-03.html#title-slide",
+    "href": "slides/slide-03.html#title-slide",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Elements of effective data visualisation\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
+  },
+  {
+    "objectID": "slides/slide-03.html#why-is-a-3d-pie-chart-considered-a-bad-plot",
+    "href": "slides/slide-03.html#why-is-a-3d-pie-chart-considered-a-bad-plot",
+    "title": "Effective Data Visualisation with R",
+    "section": "Why is a 3D pie chart considered a “bad plot”?",
+    "text": "Why is a 3D pie chart considered a “bad plot”?"
+  },
+  {
+    "objectID": "slides/slide-03.html#what-about-2d-pie-charts",
+    "href": "slides/slide-03.html#what-about-2d-pie-charts",
+    "title": "Effective Data Visualisation with R",
+    "section": "What about 2D pie charts?",
+    "text": "What about 2D pie charts?\n\n\n\n\n\n\n\nPie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data.\n\n\n\n\nThis comes from empirical research of Cleveland & McGill (1984) among others.\n\n\n\n\nCleveland, William S., and Robert Mc Gill. (1984) “Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.”"
+  },
+  {
+    "objectID": "slides/slide-03.html#which-category-is-the-largest",
+    "href": "slides/slide-03.html#which-category-is-the-largest",
+    "title": "Effective Data Visualisation with R",
+    "section": "Which category is the largest?",
+    "text": "Which category is the largest?"
+  },
+  {
+    "objectID": "slides/slide-03.html#elementary-perceptual-tasks",
+    "href": "slides/slide-03.html#elementary-perceptual-tasks",
+    "title": "Effective Data Visualisation with R",
+    "section": "Elementary Perceptual Tasks",
+    "text": "Elementary Perceptual Tasks\n Non-exhaustive"
+  },
+  {
+    "objectID": "slides/slide-03.html#rank-1",
+    "href": "slides/slide-03.html#rank-1",
+    "title": "Effective Data Visualisation with R",
+    "section": "Rank 1",
+    "text": "Rank 1\n\nExample"
+  },
+  {
+    "objectID": "slides/slide-03.html#rank-2",
+    "href": "slides/slide-03.html#rank-2",
+    "title": "Effective Data Visualisation with R",
+    "section": "Rank 2",
+    "text": "Rank 2\n\nExample"
+  },
+  {
+    "objectID": "slides/slide-03.html#rank-3",
+    "href": "slides/slide-03.html#rank-3",
+    "title": "Effective Data Visualisation with R",
+    "section": "Rank 3",
+    "text": "Rank 3\n  \nExample"
+  },
+  {
+    "objectID": "slides/slide-03.html#rank-4",
+    "href": "slides/slide-03.html#rank-4",
+    "title": "Effective Data Visualisation with R",
+    "section": "Rank 4",
+    "text": "Rank 4\n\nExample"
+  },
+  {
+    "objectID": "slides/slide-03.html#rank-5",
+    "href": "slides/slide-03.html#rank-5",
+    "title": "Effective Data Visualisation with R",
+    "section": "Rank 5",
+    "text": "Rank 5\n \nExample"
+  },
+  {
+    "objectID": "slides/slide-03.html#rank-6",
+    "href": "slides/slide-03.html#rank-6",
+    "title": "Effective Data Visualisation with R",
+    "section": "Rank 6",
+    "text": "Rank 6\n \nExample"
+  },
+  {
+    "objectID": "slides/slide-03.html#preattentive-processing-1",
+    "href": "slides/slide-03.html#preattentive-processing-1",
+    "title": "Effective Data Visualisation with R",
+    "section": "Preattentive processing",
+    "text": "Preattentive processing\n\nViewers can notice certain features are absent or present without focussing their attention on particular regions.\n\n\n\nWhich plot helps you to distinguish the data points?\n\n\n  \n\n\n\n\nHealey, Christopher G., and James T. Enns (2012) “Attention and Visual Memory in Visualization and Computer Graphics.” IEEE Transactions on Visualization and Computer Graphics 18 (7): 1170–88."
+  },
+  {
+    "objectID": "slides/slide-03.html#data-story",
+    "href": "slides/slide-03.html#data-story",
+    "title": "Effective Data Visualisation with R",
+    "section": "Data story",
+    "text": "Data story\n\nStorytelling is a powerful technique to communicate data\n\n\n\n\n\n\n\n Why storytelling is so powerful in the digital era\n Why storytelling is more trustworthy than presenting data\n Making data mean more through storytelling"
+  },
+  {
+    "objectID": "slides/slide-03.html#principles-of-communicating-data",
+    "href": "slides/slide-03.html#principles-of-communicating-data",
+    "title": "Effective Data Visualisation with R",
+    "section": "Principles of Communicating Data",
+    "text": "Principles of Communicating Data\n\n\nKnow your goal (target audience, intended message, desired effect)\nUse the right data\nSelect suitable visualisations\nDesign for aesthetics\nChoose an effective medium and channel\nCheck the results, i.e. get feedback\n\n\n\n\nJones (2014) Communicating Data with Tableau"
+  },
+  {
+    "objectID": "slides/slide-03.html#elements-of-statistical-persuasion",
+    "href": "slides/slide-03.html#elements-of-statistical-persuasion",
+    "title": "Effective Data Visualisation with R",
+    "section": "Elements of statistical persuasion",
+    "text": "Elements of statistical persuasion\n\n\nMagnitude of effects: the strength of a statistical argument is enhanced in accord with the quantitative magnitude of support for its qualitative claim.\nArticulation of results: the degree of comprehensible detail in which conclusions are phrased.\nGenerality of effects: the replicability of the results.\nInterestingness of argument: the potential to change people believe.\nCredibility of argument: the believability of a claim.\n\n\n\n\nSpencer (2022, Feb. 17). Data in Wonderland. Section 1."
+  },
+  {
+    "objectID": "slides/slide-03.html#data-story-example-birth-place",
+    "href": "slides/slide-03.html#data-story-example-birth-place",
+    "title": "Effective Data Visualisation with R",
+    "section": "Data story example: birth place",
+    "text": "Data story example: birth place"
+  },
+  {
+    "objectID": "slides/slide-03.html#data-story-example-birth-place-another-look",
+    "href": "slides/slide-03.html#data-story-example-birth-place-another-look",
+    "title": "Effective Data Visualisation with R",
+    "section": "Data story example: birth place, another look",
+    "text": "Data story example: birth place, another look"
+  },
+  {
+    "objectID": "slides/slide-03.html#law-of-proximity",
+    "href": "slides/slide-03.html#law-of-proximity",
+    "title": "Effective Data Visualisation with R",
+    "section": "Law of Proximity",
+    "text": "Law of Proximity\n\nBy placing elements closer together, it makes it easier for you to group elements together as well as make comparisons.\n\n\n\n\n\n\n\n\n\n\n\nCan you tell which birth place have more women than men amongst the Australian residents?"
+  },
+  {
+    "objectID": "slides/slide-03.html#law-of-proximity-1",
+    "href": "slides/slide-03.html#law-of-proximity-1",
+    "title": "Effective Data Visualisation with R",
+    "section": "Law of Proximity",
+    "text": "Law of Proximity\n\n\n\n\n\n\n\n\n\n\nData story\nCensus 2021 shows far more women born in Phillipines and China migrate to Australia than men born in their respective countries, whilst more men born in India migrate to Australia than women born in India."
+  },
+  {
+    "objectID": "slides/slide-03.html#law-of-similarity",
+    "href": "slides/slide-03.html#law-of-similarity",
+    "title": "Effective Data Visualisation with R",
+    "section": "Law of Similarity",
+    "text": "Law of Similarity\n\nWhen objects share similar attributes, they are perceived as being part of the same group.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that the countries are colored by their continent (Europe, Asia, and Oceania)."
+  },
+  {
+    "objectID": "slides/slide-03.html#law-of-closure",
+    "href": "slides/slide-03.html#law-of-closure",
+    "title": "Effective Data Visualisation with R",
+    "section": "Law of Closure",
+    "text": "Law of Closure\n\nObjects collected within a boundary-like structure are perceived as a group."
+  },
+  {
+    "objectID": "slides/slide-04.html#title-slide",
+    "href": "slides/slide-04.html#title-slide",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Wrap up and FAQ\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "In this 3 hour tutorial, I will demonstrate some cognitive principles and apply methods supported by empirical studies that make data visualisation more effective. The construction of data visualisation will be accompanied with R code using the ggplot2 package. The R code and data used will be provided so participants can fully replicate the presented data visualisations.\nSome knowledge in tidyverse would be beneficial. You can find an interactive introduction to data analysis with R at https://learnr.numbat.space/."
+  },
+  {
+    "objectID": "about.html#biography-of-workshop-presenter",
+    "href": "about.html#biography-of-workshop-presenter",
+    "title": "About",
+    "section": "Biography of Workshop Presenter",
+    "text": "Biography of Workshop Presenter\nDr. Emi Tanaka is a Senior Lecturer in Statistics at Monash University whose primary interest is to develop impactful statistical methods and tools that can readily be used by practitioners. Her research area includes data visualisation, mixed models and experimental designs, motivated primarily by problems in bioinformatics and agricultural sciences. She is currently the President of the Statistical Society of Australia Victorian Branch and the recipient of the Distinguished Presenter’s Award from the Statistical Society of Australia for her delivery of a wide-range of R workshops."
+  }
+]

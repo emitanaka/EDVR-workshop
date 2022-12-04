@@ -1,0 +1,8 @@
+﻿Start,End,Duration,Type,Activity,No
+9:00:00 am,9:15:00 am,15,Session,Introduction,0
+9:15:00 am,10:00:00 am,45,Session,Creating plots with ggplot2,1
+10:00:00 am,10:15:00 am,15,Practice,Break out session,1
+10:15:00 am,10:45:00 am,30,Session,Fundamentals of data visualisation,2
+10:45:00 am,11:00:00 am,15,Practice,Break out session,2
+11:00:00 am,11:45:00 am,45,Session,Elements of effective data visualisation,3
+11:45:00 am,12:00:00 pm,15,Session,Wrap-up,4

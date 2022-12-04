@@ -1,0 +1,23 @@
+Package: edvr.workshop
+Title: Effective Data Visualisation with R Workshop
+Version: 0.0.0.9000
+Authors@R: 
+    person("Emi", "Tanaka", , "dr.emi.tanaka@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1455-259X"))
+Description: This package contains the datasets and learnr exercises used for 
+  the workshop.
+License: GPL3 + file LICENSE
+Encoding: UTF-8
+Language: es
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Imports: 
+    dplyr,
+    ggplot2,
+    magrittr,
+    sf,
+    tibble,
+    tidyr
