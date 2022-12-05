@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "In this 3 hour tutorial, I will demonstrate some cognitive principles and apply methods supported by empirical studies that make data visualisation more effective. The construction of data visualisation will be accompanied with R code using the ggplot2 package. The R code and data used will be provided so participants can fully replicate the presented data visualisations.\nParticipants are expected to know how to use R. Some knowledge in tidyverse would be beneficial. You can find an interactive introduction to data analysis with R at https://learnr.numbat.space/."
+  },
+  {
+    "objectID": "about.html#biography-of-workshop-presenter",
+    "href": "about.html#biography-of-workshop-presenter",
+    "title": "About",
+    "section": "Biography of Workshop Presenter",
+    "text": "Biography of Workshop Presenter\nDr. Emi Tanaka is a Senior Lecturer in Statistics at Monash University whose primary interest is to develop impactful statistical methods and tools that can readily be used by practitioners. Her research area includes data visualisation, mixed models and experimental designs, motivated primarily by problems in bioinformatics and agricultural sciences. She is currently the President of the Statistical Society of Australia Victorian Branch and the recipient of the Distinguished Presenter’s Award from the Statistical Society of Australia for her delivery of a wide-range of R workshops."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
@@ -33,6 +47,139 @@
     "title": "Welcome",
     "section": "Exercises",
     "text": "Exercises\nTo run the exercises locally, install the packages under Installation and then run:\n\nlearnr::run_tutorial(\"exercise-01\", package = \"edvr.workshop\")\nlearnr::run_tutorial(\"exercise-02\", package = \"edvr.workshop\")"
+  },
+  {
+    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census",
+    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census",
+    "title": "Effective Data Visualisation with R",
+    "section": "Birth place from the 2021 Australian Census",
+    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n \n  \n    Birth place \n    Count \n    % \n  \n \n\n  \n    Australia \n    17,020,423 \n    66.9 \n  \n  \n    Not Stated \n    1,358,656 \n    5.3 \n  \n  \n    England \n    927,489 \n    3.6 \n  \n  \n    Other \n    759,171 \n    3.0 \n  \n  \n    India \n    673,353 \n    2.6 \n  \n  \n    China \n    549,614 \n    2.2 \n  \n  \n    New Zealand \n    530,498 \n    2.1 \n  \n  \n    Philippines \n    293,891 \n    1.2 \n  \n  \n    Vietnam \n    257,995 \n    1.0 \n  \n  \n    South Africa \n    189,208 \n    0.7 \n  \n  \n    Malaysia \n    165,613 \n    0.7 \n  \n  \n    Italy \n    163,326 \n    0.6 \n  \n  \n    Sri Lanka \n    131,901 \n    0.5 \n  \n  \n    Nepal \n    122,503 \n    0.5 \n  \n  \n    Scotland \n    118,495 \n    0.5 \n  \n  \n    Thailand \n    83,779 \n    0.3 \n  \n  \n    Korea South \n    102,096 \n    0.4 \n  \n  \n    Germany \n    101,252 \n    0.4 \n  \n  \n    Hong Kong \n    100,152 \n    0.4 \n  \n  \n    Pakistan \n    89,630 \n    0.4 \n  \n  \n    United States America \n    101,313 \n    0.4 \n  \n  \n    Indonesia \n    87,077 \n    0.3 \n  \n  \n    Greece \n    92,307 \n    0.4 \n  \n  \n    Iraq \n    92,920 \n    0.4 \n  \n  \n    Lebanon \n    87,341 \n    0.3 \n  \n  \n    Ireland \n    80,934 \n    0.3 \n  \n  \n    Iran \n    70,900 \n    0.3 \n  \n  \n    Fiji \n    68,947 \n    0.3 \n  \n  \n    Afghanistan \n    59,803 \n    0.2 \n  \n  \n    Singapore \n    61,057 \n    0.2 \n  \n  \n    Netherlands \n    66,480 \n    0.3 \n  \n  \n    Japan \n    45,266 \n    0.2 \n  \n  \n    Taiwan \n    49,505 \n    0.2 \n  \n  \n    Canada \n    50,223 \n    0.2 \n  \n  \n    Bangladesh \n    51,491 \n    0.2 \n  \n  \n    Poland \n    45,880 \n    0.2 \n  \n  \n    Brazil \n    46,718 \n    0.2 \n  \n  \n    Egypt \n    43,212 \n    0.2 \n  \n  \n    Croatia \n    43,312 \n    0.2 \n  \n  \n    Cambodia \n    39,041 \n    0.2 \n  \n  \n    North Macedonia \n    41,782 \n    0.2 \n  \n  \n    Zimbabwe \n    39,714 \n    0.2 \n  \n  \n    Turkey \n    38,572 \n    0.2 \n  \n  \n    Myanmar \n    39,168 \n    0.2 \n  \n  \n    France \n    36,025 \n    0.1 \n  \n  \n    Malta \n    35,419 \n    0.1 \n  \n  \n    Papua New Guinea \n    29,985 \n    0.1 \n  \n  \n    Chile \n    29,866 \n    0.1 \n  \n  \n    Wales \n    29,248 \n    0.1 \n  \n  \n    Samoa \n    28,111 \n    0.1 \n  \n  \n    Bosnia Herzegov \n    26,173 \n    0.1 \n  \n  \n    Mauritius \n    25,978 \n    0.1"
+  },
+  {
+    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census-1",
+    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census-1",
+    "title": "Effective Data Visualisation with R",
+    "section": "Birth place from the 2021 Australian Census",
+    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n\n\n\n\n\n\nWhich birth place is the third largest among people in Australia?"
+  },
+  {
+    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census-2",
+    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census-2",
+    "title": "Effective Data Visualisation with R",
+    "section": "Birth place from the 2021 Australian Census",
+    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n\n\n\n\n\n\n Can you read the labels without tilting your head?"
+  },
+  {
+    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census-3",
+    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census-3",
+    "title": "Effective Data Visualisation with R",
+    "section": "Birth place from the 2021 Australian Census",
+    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n\n\n\n\n\n\nWhat’s the data story?"
+  },
+  {
+    "objectID": "slides/datastory1.html#india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show",
+    "href": "slides/datastory1.html#india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show",
+    "title": "Effective Data Visualisation with R",
+    "section": "India now third most common place of birth of Australian residents, census results show",
+    "text": "India now third most common place of birth of Australian residents, census results show\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe text on the bar shows the percentage out of 25,422,813 Australian residents born in that place.\nThere were 5.3% of Australian residents who did not state their birth place.\nThe top country of birth place is Australia with 66.9% of Australian residents born in Australia.\n\n Story from The Guardian."
+  },
+  {
+    "objectID": "slides/datastory2.html#another-look",
+    "href": "slides/datastory2.html#another-look",
+    "title": "Effective Data Visualisation with R",
+    "section": "Another look",
+    "text": "Another look\n\n\n\nData Story\n\n\nIndia has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found.\n– The Guardian\n\n\n\n\n\n\n\n \n  \n    Birth place \n    Count \n    % \n    Census Year \n  \n \n\n  \n    England \n    2016 \n    907,572 \n    3.9 \n  \n  \n    China \n    2016 \n    509,557 \n    2.2 \n  \n  \n    New Zealand \n    2016 \n    518,462 \n    2.2 \n  \n  \n    India \n    2016 \n    455,388 \n    1.9 \n  \n  \n    Philippines \n    2016 \n    232,384 \n    1.0 \n  \n  \n    England \n    2021 \n    927,489 \n    3.6 \n  \n  \n    India \n    2021 \n    673,353 \n    2.6 \n  \n  \n    China \n    2021 \n    549,614 \n    2.2 \n  \n  \n    New Zealand \n    2021 \n    530,498 \n    2.1 \n  \n  \n    Philippines \n    2021 \n    293,891 \n    1.2"
+  },
+  {
+    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found",
+    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found",
+    "title": "Effective Data Visualisation with R",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nDoes this show that India overtook China and New Zealand?"
+  },
+  {
+    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1",
+    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1",
+    "title": "Effective Data Visualisation with R",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nShould we show percentage instead of counts?"
+  },
+  {
+    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2",
+    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2",
+    "title": "Effective Data Visualisation with R",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nThe legend and the line order is different…"
+  },
+  {
+    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3",
+    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3",
+    "title": "Effective Data Visualisation with R",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nMaybe we can put the labels directly in the plot?"
+  },
+  {
+    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4",
+    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4",
+    "title": "Effective Data Visualisation with R",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found"
+  },
+  {
+    "objectID": "slides/slide-00.html#title-slide",
+    "href": "slides/slide-00.html#title-slide",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Introduction\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
+  },
+  {
+    "objectID": "slides/slide-00.html#section",
+    "href": "slides/slide-00.html#section",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "Emi Tanaka\nSenior Lecturer in Statistics\nMonash University\n\n https://emitanaka.org/\n emi.tanaka@monash.edu\n @statsgen\n\n\n\nAbout your instructor\n\nI am an academic at Monash Univeristy in Clayton campus, Australia\nI teach R at university courses as well as use it daily for research and hobby \nMy childhood dream is to be a comic artist"
+  },
+  {
+    "objectID": "slides/slide-00.html#section-1",
+    "href": "slides/slide-00.html#section-1",
+    "title": "Effective Data Visualisation with R",
+    "section": "",
+    "text": "About your helper\n\nCurrently\n\n👩🏻‍🎓 PhD student in Econometrics and Business Statistics, Monash University\nWorking on dataset design and data provenance in social sciences via conformr R package.\n\nPreviously\n\n🎓 Bachelor of Commerce (Honours) in Economics at the University of Melbourne\n👩🏻‍🏫 Tutoring for economics, econometrics and business analytics at Unimelb and Monash\n📊 Data curation and exploratory analysis at UniMelb (Dept. of Econ.), and Monash (Soda Labs & EBS)\n\n\n\n\n\nCynthia Huang\nPhD Student\nMonash University\n\n https://www.cynthiahqy.com/\n cynthiahqy\n @cynthiahqy"
+  },
+  {
+    "objectID": "slides/slide-00.html#introduce-yourself-in-the-chat",
+    "href": "slides/slide-00.html#introduce-yourself-in-the-chat",
+    "title": "Effective Data Visualisation with R",
+    "section": " Introduce yourself in the chat!",
+    "text": "Introduce yourself in the chat!\n\nWhat’s your profession?\n\nWhere do you live?\nWhat’s your hobby?\nWhat would you like for people to know about you?"
+  },
+  {
+    "objectID": "slides/slide-00.html#help-me",
+    "href": "slides/slide-00.html#help-me",
+    "title": "Effective Data Visualisation with R",
+    "section": " Help me!",
+    "text": "Help me!\n\nYou can write in the chat.\nYou can raise hand from zoom, then unmute yourself to ask.\n\n\n\n\n\nYou can alert Cynthia and go to a breakout room."
+  },
+  {
+    "objectID": "slides/slide-00.html#why-data-visualisation",
+    "href": "slides/slide-00.html#why-data-visualisation",
+    "title": "Effective Data Visualisation with R",
+    "section": "Why data visualisation?",
+    "text": "Why data visualisation?\nData visualisation is a powerful tool to explore, understand and communicate data\n\nTablePlot"
+  },
+  {
+    "objectID": "slides/slide-00.html#what-data-visualisation-to-use",
+    "href": "slides/slide-00.html#what-data-visualisation-to-use",
+    "title": "Effective Data Visualisation with R",
+    "section": "What data visualisation to use?",
+    "text": "What data visualisation to use?"
+  },
+  {
+    "objectID": "slides/slide-00.html#schedule",
+    "href": "slides/slide-00.html#schedule",
+    "title": "Effective Data Visualisation with R",
+    "section": "Schedule",
+    "text": "Schedule"
   },
   {
     "objectID": "slides/slide-01.html#title-slide",
@@ -306,104 +453,6 @@
     "title": "Effective Data Visualisation with R",
     "section": "Missing facet variables",
     "text": "Missing facet variables\n\nIf a layer data is missing the faceting variable(s), then the layer will be shown across all panels based on all of the layer data\n\n\nggplot(davidian.soybean, aes(day, weight)) + \n  geom_point(data = function(.data) select(.data, -c(variety, year)), color = \"grey70\") +\n  geom_point() +\n  facet_grid(variety ~ year)\n\n\n\n\n\n\n\n\n\nThis is a nice way to creating a “shadow” across all panels."
-  },
-  {
-    "objectID": "slides/slide-00.html#title-slide",
-    "href": "slides/slide-00.html#title-slide",
-    "title": "Effective Data Visualisation with R",
-    "section": "",
-    "text": "Introduction\n\n\nEffective Data Visualisation with R\n\n👩🏻‍💻 Emi Tanaka @ Monash University\n\n\n\n emi.tanaka@monash.edu\n\n\n @statsgen\n\n\n github.com/emitanaka\n\n\n emitanaka.org\n\n\n\n\n\n\n6th December 2022 WOMBAT 2022"
-  },
-  {
-    "objectID": "slides/slide-00.html#section",
-    "href": "slides/slide-00.html#section",
-    "title": "Effective Data Visualisation with R",
-    "section": "",
-    "text": "Emi Tanaka\nSenior Lecturer in Statistics\nMonash University\n\n https://emitanaka.org/\n emi.tanaka@monash.edu\n @statsgen\n\n\n\nAbout your instructor\n\nI am an academic at Monash Univeristy in Clayton campus, Australia\nI teach R at university courses as well as use it daily for research and hobby \nMy childhood dream is to be a comic artist"
-  },
-  {
-    "objectID": "slides/slide-00.html#section-1",
-    "href": "slides/slide-00.html#section-1",
-    "title": "Effective Data Visualisation with R",
-    "section": "",
-    "text": "About your helper\n\nCurrently\n\n👩🏻‍🎓 PhD student in Econometrics and Business Statistics, Monash University\nWorking on dataset design and data provenance in social sciences via conformr R package.\n\nPreviously\n\n🎓 Bachelor of Commerce (Honours) in Economics at the University of Melbourne\n👩🏻‍🏫 Tutoring for economics, econometrics and business analytics at Unimelb and Monash\n📊 Data curation and exploratory analysis at UniMelb (Dept. of Econ.), and Monash (Soda Labs & EBS)\n\n\n\n\n\nCynthia Huang\nPhD Student\nMonash University\n\n https://www.cynthiahqy.com/\n cynthiahqy\n @cynthiahqy"
-  },
-  {
-    "objectID": "slides/slide-00.html#introduce-yourself-in-the-chat",
-    "href": "slides/slide-00.html#introduce-yourself-in-the-chat",
-    "title": "Effective Data Visualisation with R",
-    "section": " Introduce yourself in the chat!",
-    "text": "Introduce yourself in the chat!\n\nWhat’s your profession?\n\nWhere do you live?\nWhat’s your hobby?\nWhat would you like for people to know about you?"
-  },
-  {
-    "objectID": "slides/slide-00.html#help-me",
-    "href": "slides/slide-00.html#help-me",
-    "title": "Effective Data Visualisation with R",
-    "section": " Help me!",
-    "text": "Help me!\n\nYou can write in the chat.\nYou can raise hand from zoom, then unmute yourself to ask.\n\n\n\n\n\nYou can alert Cynthia and go to a breakout room."
-  },
-  {
-    "objectID": "slides/slide-00.html#why-data-visualisation",
-    "href": "slides/slide-00.html#why-data-visualisation",
-    "title": "Effective Data Visualisation with R",
-    "section": "Why data visualisation?",
-    "text": "Why data visualisation?\nData visualisation is a powerful tool to explore, understand and communicate data\n\nTablePlot"
-  },
-  {
-    "objectID": "slides/slide-00.html#what-data-visualisation-to-use",
-    "href": "slides/slide-00.html#what-data-visualisation-to-use",
-    "title": "Effective Data Visualisation with R",
-    "section": "What data visualisation to use?",
-    "text": "What data visualisation to use?"
-  },
-  {
-    "objectID": "slides/slide-00.html#schedule",
-    "href": "slides/slide-00.html#schedule",
-    "title": "Effective Data Visualisation with R",
-    "section": "Schedule",
-    "text": "Schedule"
-  },
-  {
-    "objectID": "slides/datastory2.html#another-look",
-    "href": "slides/datastory2.html#another-look",
-    "title": "Effective Data Visualisation with R",
-    "section": "Another look",
-    "text": "Another look\n\n\n\nData Story\n\n\nIndia has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found.\n– The Guardian\n\n\n\n\n\n\n\n \n  \n    Birth place \n    Count \n    % \n    Census Year \n  \n \n\n  \n    England \n    2016 \n    907,572 \n    3.9 \n  \n  \n    China \n    2016 \n    509,557 \n    2.2 \n  \n  \n    New Zealand \n    2016 \n    518,462 \n    2.2 \n  \n  \n    India \n    2016 \n    455,388 \n    1.9 \n  \n  \n    Philippines \n    2016 \n    232,384 \n    1.0 \n  \n  \n    England \n    2021 \n    927,489 \n    3.6 \n  \n  \n    India \n    2021 \n    673,353 \n    2.6 \n  \n  \n    China \n    2021 \n    549,614 \n    2.2 \n  \n  \n    New Zealand \n    2021 \n    530,498 \n    2.1 \n  \n  \n    Philippines \n    2021 \n    293,891 \n    1.2"
-  },
-  {
-    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found",
-    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found",
-    "title": "Effective Data Visualisation with R",
-    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
-    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nDoes this show that India overtook China and New Zealand?"
-  },
-  {
-    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1",
-    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1",
-    "title": "Effective Data Visualisation with R",
-    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
-    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nShould we show percentage instead of counts?"
-  },
-  {
-    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2",
-    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2",
-    "title": "Effective Data Visualisation with R",
-    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
-    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nThe legend and the line order is different…"
-  },
-  {
-    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3",
-    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3",
-    "title": "Effective Data Visualisation with R",
-    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
-    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\n\n\n\n\n\n\n\n\n\nMaybe we can put the labels directly in the plot?"
-  },
-  {
-    "objectID": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4",
-    "href": "slides/datastory2.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4",
-    "title": "Effective Data Visualisation with R",
-    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
-    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found"
   },
   {
     "objectID": "slides/slide-02.html#title-slide",
@@ -728,41 +777,6 @@
     "text": "Data story example: birth place, another look"
   },
   {
-    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census",
-    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census",
-    "title": "Effective Data Visualisation with R",
-    "section": "Birth place from the 2021 Australian Census",
-    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n \n  \n    Birth place \n    Count \n    % \n  \n \n\n  \n    Australia \n    17,020,423 \n    66.9 \n  \n  \n    Not Stated \n    1,358,656 \n    5.3 \n  \n  \n    England \n    927,489 \n    3.6 \n  \n  \n    Other \n    759,171 \n    3.0 \n  \n  \n    India \n    673,353 \n    2.6 \n  \n  \n    China \n    549,614 \n    2.2 \n  \n  \n    New Zealand \n    530,498 \n    2.1 \n  \n  \n    Philippines \n    293,891 \n    1.2 \n  \n  \n    Vietnam \n    257,995 \n    1.0 \n  \n  \n    South Africa \n    189,208 \n    0.7 \n  \n  \n    Malaysia \n    165,613 \n    0.7 \n  \n  \n    Italy \n    163,326 \n    0.6 \n  \n  \n    Sri Lanka \n    131,901 \n    0.5 \n  \n  \n    Nepal \n    122,503 \n    0.5 \n  \n  \n    Scotland \n    118,495 \n    0.5 \n  \n  \n    Thailand \n    83,779 \n    0.3 \n  \n  \n    Korea South \n    102,096 \n    0.4 \n  \n  \n    Germany \n    101,252 \n    0.4 \n  \n  \n    Hong Kong \n    100,152 \n    0.4 \n  \n  \n    Pakistan \n    89,630 \n    0.4 \n  \n  \n    United States America \n    101,313 \n    0.4 \n  \n  \n    Indonesia \n    87,077 \n    0.3 \n  \n  \n    Greece \n    92,307 \n    0.4 \n  \n  \n    Iraq \n    92,920 \n    0.4 \n  \n  \n    Lebanon \n    87,341 \n    0.3 \n  \n  \n    Ireland \n    80,934 \n    0.3 \n  \n  \n    Iran \n    70,900 \n    0.3 \n  \n  \n    Fiji \n    68,947 \n    0.3 \n  \n  \n    Afghanistan \n    59,803 \n    0.2 \n  \n  \n    Singapore \n    61,057 \n    0.2 \n  \n  \n    Netherlands \n    66,480 \n    0.3 \n  \n  \n    Japan \n    45,266 \n    0.2 \n  \n  \n    Taiwan \n    49,505 \n    0.2 \n  \n  \n    Canada \n    50,223 \n    0.2 \n  \n  \n    Bangladesh \n    51,491 \n    0.2 \n  \n  \n    Poland \n    45,880 \n    0.2 \n  \n  \n    Brazil \n    46,718 \n    0.2 \n  \n  \n    Egypt \n    43,212 \n    0.2 \n  \n  \n    Croatia \n    43,312 \n    0.2 \n  \n  \n    Cambodia \n    39,041 \n    0.2 \n  \n  \n    North Macedonia \n    41,782 \n    0.2 \n  \n  \n    Zimbabwe \n    39,714 \n    0.2 \n  \n  \n    Turkey \n    38,572 \n    0.2 \n  \n  \n    Myanmar \n    39,168 \n    0.2 \n  \n  \n    France \n    36,025 \n    0.1 \n  \n  \n    Malta \n    35,419 \n    0.1 \n  \n  \n    Papua New Guinea \n    29,985 \n    0.1 \n  \n  \n    Chile \n    29,866 \n    0.1 \n  \n  \n    Wales \n    29,248 \n    0.1 \n  \n  \n    Samoa \n    28,111 \n    0.1 \n  \n  \n    Bosnia Herzegov \n    26,173 \n    0.1 \n  \n  \n    Mauritius \n    25,978 \n    0.1"
-  },
-  {
-    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census-1",
-    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census-1",
-    "title": "Effective Data Visualisation with R",
-    "section": "Birth place from the 2021 Australian Census",
-    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n\n\n\n\n\n\nWhich birth place is the third largest among people in Australia?"
-  },
-  {
-    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census-2",
-    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census-2",
-    "title": "Effective Data Visualisation with R",
-    "section": "Birth place from the 2021 Australian Census",
-    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n\n\n\n\n\n\n Can you read the labels without tilting your head?"
-  },
-  {
-    "objectID": "slides/datastory1.html#birth-place-from-the-2021-australian-census-3",
-    "href": "slides/datastory1.html#birth-place-from-the-2021-australian-census-3",
-    "title": "Effective Data Visualisation with R",
-    "section": "Birth place from the 2021 Australian Census",
-    "text": "Birth place from the 2021 Australian Census\n\n\n\n\n\n\n\n\n\n\nWhat’s the data story?"
-  },
-  {
-    "objectID": "slides/datastory1.html#india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show",
-    "href": "slides/datastory1.html#india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show",
-    "title": "Effective Data Visualisation with R",
-    "section": "India now third most common place of birth of Australian residents, census results show",
-    "text": "India now third most common place of birth of Australian residents, census results show\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe text on the bar shows the percentage out of 25,422,813 Australian residents born in that place.\nThere were 5.3% of Australian residents who did not state their birth place.\nThe top country of birth place is Australia with 66.9% of Australian residents born in Australia.\n\n Story from The Guardian."
-  },
-  {
     "objectID": "slides/slide-04.html#title-slide",
     "href": "slides/slide-04.html#title-slide",
     "title": "Effective Data Visualisation with R",
@@ -824,19 +838,5 @@
     "title": "Effective Data Visualisation with R",
     "section": "Community",
     "text": "Community\nLearn with others!\n\nR for data science online learning community\nRStudio/Posit Community forum with ggplot2 tag\nStackoverflow with ggplot2 tag"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "In this 3 hour tutorial, I will demonstrate some cognitive principles and apply methods supported by empirical studies that make data visualisation more effective. The construction of data visualisation will be accompanied with R code using the ggplot2 package. The R code and data used will be provided so participants can fully replicate the presented data visualisations.\nParticipants are expected to know how to use R. Some knowledge in tidyverse would be beneficial. You can find an interactive introduction to data analysis with R at https://learnr.numbat.space/."
-  },
-  {
-    "objectID": "about.html#biography-of-workshop-presenter",
-    "href": "about.html#biography-of-workshop-presenter",
-    "title": "About",
-    "section": "Biography of Workshop Presenter",
-    "text": "Biography of Workshop Presenter\nDr. Emi Tanaka is a Senior Lecturer in Statistics at Monash University whose primary interest is to develop impactful statistical methods and tools that can readily be used by practitioners. Her research area includes data visualisation, mixed models and experimental designs, motivated primarily by problems in bioinformatics and agricultural sciences. She is currently the President of the Statistical Society of Australia Victorian Branch and the recipient of the Distinguished Presenter’s Award from the Statistical Society of Australia for her delivery of a wide-range of R workshops."
   }
 ]

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://emitanaka.org/EDVR-workshop/about.html</loc>
+    <lastmod>2022-12-05T21:27:08.275Z</lastmod>
+  </url>
+  <url>
     <loc>https://emitanaka.org/EDVR-workshop/index.html</loc>
-    <lastmod>2022-12-05T10:16:38.732Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-01.html</loc>
-    <lastmod>2022-12-05T10:14:48.100Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-00.html</loc>
-    <lastmod>2022-12-05T10:14:58.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emitanaka.org/EDVR-workshop/slides/datastory2.html</loc>
-    <lastmod>2022-12-05T10:15:07.644Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-02.html</loc>
-    <lastmod>2022-12-05T10:15:28.064Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-03.html</loc>
-    <lastmod>2022-12-05T21:19:45.108Z</lastmod>
+    <lastmod>2022-12-05T21:27:12.022Z</lastmod>
   </url>
   <url>
     <loc>https://emitanaka.org/EDVR-workshop/slides/datastory1.html</loc>
-    <lastmod>2022-12-05T10:15:40.682Z</lastmod>
+    <lastmod>2022-12-05T21:27:16.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emitanaka.org/EDVR-workshop/slides/datastory2.html</loc>
+    <lastmod>2022-12-05T21:27:24.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-00.html</loc>
+    <lastmod>2022-12-05T21:27:27.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-01.html</loc>
+    <lastmod>2022-12-05T21:27:46.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-02.html</loc>
+    <lastmod>2022-12-05T21:28:01.233Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emitanaka.org/EDVR-workshop/slides/slide-03.html</loc>
+    <lastmod>2022-12-05T21:28:06.523Z</lastmod>
   </url>
   <url>
     <loc>https://emitanaka.org/EDVR-workshop/slides/slide-04.html</loc>
-    <lastmod>2022-12-05T10:15:47.914Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emitanaka.org/EDVR-workshop/about.html</loc>
-    <lastmod>2022-12-05T10:15:48.293Z</lastmod>
+    <lastmod>2022-12-05T21:28:11.386Z</lastmod>
   </url>
 </urlset>
