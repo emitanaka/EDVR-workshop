@@ -9,7 +9,7 @@ In this 3 hour tutorial, I will demonstrate some cognitive principles and apply 
 * Session 2: Fundamentals of data visualisation.
 * Session 3: Elements of effective data visualisation.
 
-Some knowledge in tidyverse would be beneficial. You can find an interactive introduction to data analysis with R at [https://learnr.numbat.space/](https://learnr.numbat.space/).
+Participants are expected to know how to use R. Some knowledge in tidyverse would be beneficial. You can find an interactive introduction to data analysis with R at [https://learnr.numbat.space/](https://learnr.numbat.space/).
 
 
 
