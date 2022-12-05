@@ -690,7 +690,7 @@
     "href": "slides/slide-02.html#explore-with-different-parameters",
     "title": "Effective Data Visualisation with R",
     "section": "Explore with different parameters!",
-    "text": "Explore with different parameters!\n\n\n\nggplot(diamonds, aes(x = price)) +\n  # default is bins = 30\n  geom_histogram(bins = 30)\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\n\nDo you notice something in this plot?\n\n\n\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 1) + \n  xlim(0, 2000)"
+    "text": "Explore with different parameters!\n\n\n\nggplot(diamonds, aes(x = price)) +\n  # default is bins = 30\n  geom_histogram(bins = 30)\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\n\nDo you notice something in this plot?"
   },
   {
     "objectID": "slides/slide-02.html#explore-with-different-plot-types",

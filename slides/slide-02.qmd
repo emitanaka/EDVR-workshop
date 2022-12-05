@@ -426,9 +426,11 @@ Do you notice something in this plot?
 ::: fragment
 
 ```{r gghist2-zoom}
+#| fig-height: 3
+#| echo: false
 ggplot(diamonds, aes(x = price)) +
   geom_histogram(binwidth = 1) + 
-  xlim(0, 2000)
+  ggforce::facet_zoom(x = between(price, 1400, 1600))
 ```
 
 :::
