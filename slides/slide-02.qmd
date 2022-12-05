@@ -1,0 +1,613 @@
+---
+subtitle: "Effective Data Visualisation with R"
+pagetitle: "Fundamentals of data visualisation"
+author: "Emi Tanaka"
+date: "6th December 2022"
+host: "WOMBAT 2022"
+institute: "Monash University"
+strip-comments: true
+format: 
+  revealjs:
+    logo: images/monash-one-line-black-rgb.png
+    slide-number: true
+    theme: assets/monash.scss
+    show-slide-number: all
+    controls: true
+    width: 1280
+    height: 720
+    incremental: false
+    auto-stretch: false
+    css: [assets/custom.css, assets/pacman.css, assets/tachyons-addon.css]
+    include-after: |
+      <link rel="stylesheet" href="assets/syntax-highlight.css">
+      <link rel="stylesheet" href="assets/fontawesome-free-6.1.1-web/css/all.min.css">
+      <script src="assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
+callout-icon: false
+execute:
+  echo: true
+  cache: false
+---
+
+
+## {#title-slide background-image="images/bg4.jpeg"}
+
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+theme_set(theme(text = element_text(size = 24)))
+source("setup.R")
+```
+
+```{r}
+#| child: _title-slide.qmd
+```
+
+
+## Visualising [amounts]{.monash-blue} and [proportions]{.monash-blue} {background-color="#e3e3e3"}
+
+::: flex
+
+::: w-70
+
+![](images/catalogue/amount-barplot.svg) ![](images/catalogue/amount-scatterplot.svg) ![](images/catalogue/amount-grouped-barplot.svg)
+![](images/catalogue/amount-stacked-barplot.svg) ![](images/catalogue/amount-heatmap.svg)
+
+![](images/catalogue/prop-piechart.svg) ![](images/catalogue/prop-stacked-perc-barplot.svg) ![](images/catalogue/prop-stacked-density-plot.svg)
+
+
+:::
+
+::: w-30
+
+* `geom_bar()`
+* `geom_col()`
+* `geom_point()`
+* `geom_tile()`
+* `geom_density()`
+
+:::
+
+:::
+
+
+
+# <i class="fas fa-arrows-alt"></i> Position adjustments {background-color="#006DAE"}
+
+
+## A barplot with `geom_bar()` [with a categorical variable]{.f3}
+
+```{r geom-bar}
+#| output-location: column
+library(palmerpenguins)
+ggplot(penguins, aes(x = island)) +
+  geom_bar()
+```
+
+* If you have a categorical variable, then you usually want to study the frequency of its categories. 
+* Here the `stat = "count"` is computing the frequencies for each category for you.  
+
+
+## A barplot with `geom_bar()` [with a discrete numerical variable]{.f3}
+
+::: flex
+
+::: w-60
+
+```{r geom-bar2A}
+#| eval: false
+penguins %>%
+  # for demonstration, change 2009 to 2010
+  mutate(year = case_match(year,
+                           2009 ~ 2010,
+                           .default = year)) %>%
+  ggplot(aes(x = year)) +
+  geom_bar()
+```
+
+:::
+
+::: w-40
+
+```{r geom-bar2A}
+#| echo: false
+```
+
+:::
+
+:::
+
+* Supplying a numerical variable to the x-axis results in a continuous scale.
+* If you want to study each level in a discrete variable, then you may want to convert the discrete variable to a factor instead `x = factor(year)`. 
+
+## Summary data 
+
+* Sometimes your input data may already contain pre-computed counts. 
+
+```{r}
+penguins_summary <- penguins %>% 
+  count(sex, species)
+penguins_summary
+```
+
+## A barplot with `geom_col()` 
+
+
+
+. . . 
+
+* In this case, you don't need `stat = "count"` to do the counting for you and use `geom_col()` instead.
+
+. . . 
+
+```{r geom-col}
+#| output-location: column
+#| fig-width: 8
+#| fig-height: 3
+ggplot(penguins_summary, 
+       aes(x = species, y = n)) +
+  geom_col() 
+```
+
+
+* This is essential a short hand for `geom_bar(stat = "identity")` where `stat = "identity"` means that you will take the value as supplied without any statistical transformation.
+
+## A stacked barplot with `"stack"`
+
+::: flex
+
+::: {.w-65 .pr3}
+
+```{r}
+penguins_summary
+```
+
+
+:::
+
+
+::: w-35
+
+```{r geom-col-stack-invisible}
+#| echo: false
+#| fig-height: 4
+#| fig-width: 6
+ggplot(penguins_summary, 
+       aes(x = species, y = n)) +
+  geom_col() 
+```
+
+:::
+
+:::
+
+. . . 
+
+
+::: flex
+
+::: w-65
+
+
+```{r geom-col-stack-show}
+#| eval: false
+#| code-line-numbers: 3-4
+ggplot(penguins_summary, 
+       aes(x = species, y = n, fill = sex)) +
+  geom_col(# default position
+           position = "stack") 
+```
+
+:::
+
+
+::: w-35
+
+```{r geom-col-stack-show}
+#| echo: false
+#| fig-height: 4
+#| fig-width: 6
+```
+
+:::
+
+:::
+
+
+
+
+
+
+## A grouped barplot with `"dodge"`
+
+::: flex
+
+::: w-65
+
+```{r geom-col-dodge}
+#| code-line-numbers: "3"
+#| eval: false
+ggplot(penguins_summary,
+       aes(species, n, fill = sex)) +
+  geom_col(position = "dodge")
+```
+
+::: fragment
+
+* `"dodge"` = `position_dodge()`
+
+:::
+
+:::
+
+::: w-35
+
+```{r geom-col-dodge}
+#| fig-height: 3
+#| fig-width: 6
+#| echo: false
+```
+
+:::
+
+
+:::
+
+
+
+. . . 
+
+::: flex
+
+::: w-65
+
+```{r geom-col-dodge2}
+#| code-line-numbers: "3-5"
+#| eval: false
+ggplot(penguins_summary, 
+       aes(species, n, fill = sex)) +
+  geom_col(
+    position = position_dodge(preserve = "single")) +
+  scale_fill_discrete(drop = FALSE)
+```
+
+:::
+
+::: w-35
+
+```{r geom-col-dodge2}
+#| fig-height: 3
+#| fig-width: 6
+#| echo: false
+```
+
+:::
+
+
+:::
+
+
+## Another grouped barplot with `"dodge2"`
+
+```{r geom-col-dodge3}
+#| code-line-numbers: "3"
+#| fig-height: 3
+ggplot(penguins_summary, 
+       aes(species, n, fill = sex)) +
+  geom_col(position = position_dodge2(padding = 0.1))
+```
+
+* `"dodge2"` uses a different algorithm to recalculate the x-values with an option to add a padding between geometric objects
+
+## Stacked percentage barplot with `"fill"`
+
+```{r geom-col-fill}
+#| fig-height: 3
+#| code-line-numbers: "3"
+ggplot(penguins_summary, 
+       aes(species, n, fill = sex)) +
+  geom_col(position = "fill")
+```
+
+
+* If you want to compare the percentages between the different `x`, then `position = "fill"` can be handy.
+
+
+# <i class="fas fa-compass"></i> Coordinate systems {background-color="#006DAE"}
+
+## Pie or donut charts with `coord_polar()` {auto-animate=true}
+
+* The default coordinate system is the Cartesian coordinate system.
+
+. . . 
+
+* But you can change this to a polar coordinate system like below.
+
+```{r geom-pie}
+#| fig-height: 4
+#| code-line-numbers: "4"
+#| output-location: fragment
+ggplot(penguins_summary, 
+       aes(species, n, fill = sex)) +
+  geom_col(position = "fill") +
+  coord_polar("y")
+```
+
+## Other coordinate systems
+
+::: incremental
+
+* `coord_cartesian()` for Cartesian coordinate systems (default)
+* `coord_flip()` to flip the x and y 
+* `coord_fixed()` to use a fixed aspect ratio
+* `coord_equal()` is essentially `coord_fixed(ratio = 1)`
+* `coord_trans()` to transform the coordinate after the statistical transformation
+* `coord_map()` to use projection based on `mapproj` 
+
+:::
+
+
+## Visualising [distributions]{.monash-blue} {background-color="#e3e3e3"}
+
+::: flex
+
+::: w-70
+
+![](images/catalogue/dist-histogram.svg)  ![](images/catalogue/dist-densityplot.svg) ![](images/catalogue/dist-cumdensityplot.svg) ![](images/catalogue/dist-qqplot.svg)
+
+![](images/catalogue/dist-boxplots.svg) ![](images/catalogue/dist-violinplots.svg) ![](images/catalogue/dist-stripplots.svg) ![](images/catalogue/dist-histograms.svg) ![](images/catalogue/dist-densityplots.svg)
+
+:::
+
+
+::: w-30
+
+
+* `geom_histogram()`
+* `geom_density()`
+* `stat_ecdf()`
+* `stat_qq()`
+* `geom_boxplot()`
+* `geom_violin()`
+* `geom_jitter()`
+
+
+:::
+
+
+:::
+
+## <i class="fas fa-database"></i> Illustrative datasets
+
+**Diamonds**
+
+```{r}
+data(diamonds, package = "ggplot2")
+str(diamonds)
+```
+
+**Volcano eruption times**
+
+
+```{r}
+str(faithful)
+```
+
+
+## Explore with different [parameters]{.monash-blue}!
+
+::: flex
+
+::: {.w-50 .pr3}
+
+
+```{r gghist}
+ggplot(diamonds, aes(x = price)) +
+  # default is bins = 30
+  geom_histogram(bins = 30)
+```
+
+:::
+
+::: {.w-50}
+
+::: fragment
+
+```{r gghist2}
+#| fig-height: 3
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 1)
+```
+
+Do you notice something in this plot?
+
+:::
+
+::: fragment
+
+```{r gghist2-zoom}
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 1) + 
+  xlim(0, 2000)
+```
+
+:::
+
+:::
+
+:::
+
+
+## Explore with different [plot types]{.monash-blue}!
+
+::: flex
+
+::: {.w-50 .pr3}
+
+```{r ggboxplot}
+ggplot(faithful, aes(eruptions)) +
+  geom_boxplot()
+```
+
+:::
+
+::: {.w-50 .fragment}
+
+```{r ggdensity}
+ggplot(faithful, aes(eruptions)) +
+  geom_density()
+```
+
+:::
+
+
+:::
+
+
+::: fragment
+
+* Notice that you can't see **multi-modality** with the boxplot!
+
+:::
+
+
+
+
+## Visualising [bivariate relationships]{.monash-blue} {background-color="#e3e3e3"}
+
+::: flex
+
+::: w-70
+
+![](images/catalogue/rel-scatterplot.svg) ![](images/catalogue/rel-smoothplot.svg) ![](images/catalogue/rel-2dbin.svg) ![](images/catalogue/rel-2dhex.svg)
+
+
+![](images/catalogue/rel-slopegraph.svg) ![](images/catalogue/corr-lineplot.svg)
+
+:::
+
+
+::: w-30
+
+
+* `geom_point()`
+* `geom_smooth()`
+* `geom_bin2d()`
+* `geom_hex()`
+* `geom_line()`
+
+
+:::
+
+
+:::
+
+## Scales
+
+* Scales control the mapping from **data** to aesthetics
+
+. . . 
+
+* They usually come in the format like below:
+
+<center>
+<img src="images/ggplot-scale.png">
+</center>
+
+. . . 
+
+* E.g. `scale_x_continuous()`, `scale_fill_discrete()`, `scale_y_log10()` and so on.
+
+
+
+
+## Guide
+
+* The scale creates a **guide**: an **axis** or **legend**
+
+<center>
+<img src="images/guides-dissection.png">
+</center>
+
+. . . 
+
+* To modify these you generally use `scale_*`, `guide_*` within `guides` or other handy functions (e.g. `labs`, `xlab`, `ylab`, and so on).
+
+
+
+## Nonlinear axes
+
+linear scale (default) with `scale_x_continuous()`
+
+```{r axis1, fig.height = 0.7}
+#| echo: false
+points <- data.frame(x = c(1:10)^2, y = 0)
+
+ggplot(points, aes(x, y)) + 
+  geom_hline(yintercept = 0, color = "grey80", linewidth = 0.7) +
+  geom_point(size = 2) +
+  theme_void() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme(axis.text.x = element_text(color = "black"),
+        axis.ticks.x = element_line(color = "grey80"),
+        panel.grid.major.x = element_line(color = "grey80", linewidth = 0.7),
+        axis.title.x = element_text(color = "black"))
+```
+
+
+. . . 
+
+log with base 10 scale with `scale_x_log10()`
+
+```{r axis3, fig.height = 0.7}
+#| echo: false
+ggplot(points, aes(x, y)) + 
+  geom_hline(yintercept = 0, color = "grey80", linewidth = 0.7) +
+  geom_point(size = 2) +
+  theme_void() +
+  scale_y_continuous(expand = c(0, 0)) +
+  scale_x_log10() +
+  theme(axis.text.x = element_text(color = "black"),
+        axis.ticks.x = element_line(color = "grey80"),
+        panel.grid.major.x = element_line(color = "grey80", linewidth = 0.7),
+        axis.title.x = element_text(color = "black")) +
+  labs(x = "x")
+```
+
+
+. . . 
+
+transformed data `aes(x = log10(x))`
+
+```{r axis2, fig.height = 0.7}
+#| echo: false
+ggplot(points, aes(log10(x), y)) + 
+  geom_hline(yintercept = 0, color = "grey80", linewidth = 0.7) +
+  geom_point(size = 2) +
+  theme_void() +
+  scale_y_continuous(expand = c(0, 0)) +
+  #scale_x_continuous(breaks = log10(c(1, 10, 100))) +
+  labs(x = "log10(x)") +
+  theme(axis.text.x = element_text(color = "black"),
+        axis.ticks.x = element_line(color = "grey80"),
+        panel.grid.major.x = element_line(color = "grey80", linewidth = 0.7),
+        axis.title.x = element_text(color = "black"))
+```
+
+
+# <i class="fas fa-users"></i> {background-color="#D93F00"}
+
+
+[<i class="fas fa-directions"></i> Your turn!]{.f-headline}
+
+```{r}
+#| echo: false
+#| cache: false
+library(countdown)
+countdown(15)
+```
+
+`>` Go to [ebsmonash.shinyapps.io/edvr-exercise-02](https://ebsmonash.shinyapps.io/edvr-exercise-02)  
+`>` OR go to R console and enter:
+
+[`learnr::run_tutorial("exercise-02", package = "edvr.workshop")`]{.f3}

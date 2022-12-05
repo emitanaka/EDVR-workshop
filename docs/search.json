@@ -417,7 +417,7 @@
     "href": "slides/slide-02.html#another-grouped-barplot-with-dodge2",
     "title": "Effective Data Visualisation with R",
     "section": "Another grouped barplot with \"dodge2\"",
-    "text": "Another grouped barplot with \"dodge2\"\n\nggplot(penguins_summary, \n       aes(species, n, fill = sex)) +\n  geom_col(position = position_dodge2(padding = 0.1))\n\n\n\n\n\n\n\n\n\n\"dodge2\" uses a different"
+    "text": "Another grouped barplot with \"dodge2\"\n\nggplot(penguins_summary, \n       aes(species, n, fill = sex)) +\n  geom_col(position = position_dodge2(padding = 0.1))\n\n\n\n\n\n\n\n\n\n\"dodge2\" uses a different algorithm to recalculate the x-values with an option to add a padding between geometric objects"
   },
   {
     "objectID": "slides/slide-02.html#stacked-percentage-barplot-with-fill",
@@ -677,5 +677,61 @@
     "title": "About",
     "section": "Biography of Workshop Presenter",
     "text": "Biography of Workshop Presenter\nDr. Emi Tanaka is a Senior Lecturer in Statistics at Monash University whose primary interest is to develop impactful statistical methods and tools that can readily be used by practitioners. Her research area includes data visualisation, mixed models and experimental designs, motivated primarily by problems in bioinformatics and agricultural sciences. She is currently the President of the Statistical Society of Australia Victorian Branch and the recipient of the Distinguished Presenter’s Award from the Statistical Society of Australia for her delivery of a wide-range of R workshops."
+  },
+  {
+    "objectID": "slides/slide-02.html#diamonds-data",
+    "href": "slides/slide-02.html#diamonds-data",
+    "title": "Effective Data Visualisation with R",
+    "section": " Diamonds data",
+    "text": "Diamonds data\n\ndata(diamonds, package = \"ggplot2\")\nstr(diamonds)\n\ntibble [53,940 × 10] (S3: tbl_df/tbl/data.frame)\n $ carat  : num [1:53940] 0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...\n $ cut    : Ord.factor w/ 5 levels \"Fair\"<\"Good\"<..: 5 4 2 4 2 3 3 3 1 3 ...\n $ color  : Ord.factor w/ 7 levels \"D\"<\"E\"<\"F\"<\"G\"<..: 2 2 2 6 7 7 6 5 2 5 ...\n $ clarity: Ord.factor w/ 8 levels \"I1\"<\"SI2\"<\"SI1\"<..: 2 3 5 4 2 6 7 3 4 5 ...\n $ depth  : num [1:53940] 61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...\n $ table  : num [1:53940] 55 61 65 58 58 57 57 55 61 61 ...\n $ price  : int [1:53940] 326 326 327 334 335 336 336 337 337 338 ...\n $ x      : num [1:53940] 3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...\n $ y      : num [1:53940] 3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...\n $ z      : num [1:53940] 2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ..."
+  },
+  {
+    "objectID": "slides/slide-02.html#explore-with-different-parameters",
+    "href": "slides/slide-02.html#explore-with-different-parameters",
+    "title": "Effective Data Visualisation with R",
+    "section": "Explore with different parameters!",
+    "text": "Explore with different parameters!\n\n\n\nggplot(diamonds, aes(x = price)) +\n  # default is bins = 30\n  geom_histogram(bins = 30)\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\n\nDo you notice something in this plot?\n\n\n\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 1) + \n  xlim(0, 2000)"
+  },
+  {
+    "objectID": "slides/slide-02.html#explore-with-different-plot-types",
+    "href": "slides/slide-02.html#explore-with-different-plot-types",
+    "title": "Effective Data Visualisation with R",
+    "section": "Explore with different plot types!",
+    "text": "Explore with different plot types!\n\n\n\nggplot(faithful, aes(eruptions)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\nggplot(faithful, aes(eruptions)) +\n  geom_density()\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that you can’t see multi-modality with the boxplot!"
+  },
+  {
+    "objectID": "slides/slide-02.html#data",
+    "href": "slides/slide-02.html#data",
+    "title": "Effective Data Visualisation with R",
+    "section": " Data",
+    "text": "Data\nDiamonds\n\ndata(diamonds, package = \"ggplot2\")\nstr(diamonds)\n\ntibble [53,940 × 10] (S3: tbl_df/tbl/data.frame)\n $ carat  : num [1:53940] 0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...\n $ cut    : Ord.factor w/ 5 levels \"Fair\"<\"Good\"<..: 5 4 2 4 2 3 3 3 1 3 ...\n $ color  : Ord.factor w/ 7 levels \"D\"<\"E\"<\"F\"<\"G\"<..: 2 2 2 6 7 7 6 5 2 5 ...\n $ clarity: Ord.factor w/ 8 levels \"I1\"<\"SI2\"<\"SI1\"<..: 2 3 5 4 2 6 7 3 4 5 ...\n $ depth  : num [1:53940] 61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...\n $ table  : num [1:53940] 55 61 65 58 58 57 57 55 61 61 ...\n $ price  : int [1:53940] 326 326 327 334 335 336 336 337 337 338 ...\n $ x      : num [1:53940] 3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...\n $ y      : num [1:53940] 3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...\n $ z      : num [1:53940] 2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ..."
+  },
+  {
+    "objectID": "slides/slide-02.html#illustrative-datasets",
+    "href": "slides/slide-02.html#illustrative-datasets",
+    "title": "Effective Data Visualisation with R",
+    "section": " Illustrative datasets",
+    "text": "Illustrative datasets\nDiamonds\n\ndata(diamonds, package = \"ggplot2\")\nstr(diamonds)\n\ntibble [53,940 × 10] (S3: tbl_df/tbl/data.frame)\n $ carat  : num [1:53940] 0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...\n $ cut    : Ord.factor w/ 5 levels \"Fair\"<\"Good\"<..: 5 4 2 4 2 3 3 3 1 3 ...\n $ color  : Ord.factor w/ 7 levels \"D\"<\"E\"<\"F\"<\"G\"<..: 2 2 2 6 7 7 6 5 2 5 ...\n $ clarity: Ord.factor w/ 8 levels \"I1\"<\"SI2\"<\"SI1\"<..: 2 3 5 4 2 6 7 3 4 5 ...\n $ depth  : num [1:53940] 61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...\n $ table  : num [1:53940] 55 61 65 58 58 57 57 55 61 61 ...\n $ price  : int [1:53940] 326 326 327 334 335 336 336 337 337 338 ...\n $ x      : num [1:53940] 3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...\n $ y      : num [1:53940] 3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...\n $ z      : num [1:53940] 2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...\n\n\nVolcano eruption times\n\nstr(faithful)\n\n'data.frame':   272 obs. of  2 variables:\n $ eruptions: num  3.6 1.8 3.33 2.28 4.53 ...\n $ waiting  : num  79 54 74 62 85 55 88 85 51 85 ..."
+  },
+  {
+    "objectID": "slides/slide-02.html#nonlinear-axes",
+    "href": "slides/slide-02.html#nonlinear-axes",
+    "title": "Effective Data Visualisation with R",
+    "section": "Nonlinear axes",
+    "text": "Nonlinear axes\nlinear scale (default) with scale_x_continuous()\n\n\n\n\n\n\n\n\n\n\nlog with base 10 scale with scale_x_log10()\n\n\n\n\n\n\n\n\n\n\n\ntransformed data aes(x = log10(x))"
+  },
+  {
+    "objectID": "slides/slide-02.html#scales",
+    "href": "slides/slide-02.html#scales",
+    "title": "Effective Data Visualisation with R",
+    "section": "Scales",
+    "text": "Scales\n\nScales control the mapping from data to aesthetics\n\n\n\nThey usually come in the format like below:\n\n\n\n\n\n\n\nE.g. scale_x_continuous(), scale_fill_discrete(), scale_y_log10() and so on."
+  },
+  {
+    "objectID": "slides/slide-02.html#guide",
+    "href": "slides/slide-02.html#guide",
+    "title": "Effective Data Visualisation with R",
+    "section": "Guide",
+    "text": "Guide\n\nThe scale creates a guide: an axis or legend\n\n\n\n\n\n\nTo modify these you generally use scale_*, guide_* within guides or other handy functions (e.g. labs, xlab, ylab, and so on)."
   }
 ]
