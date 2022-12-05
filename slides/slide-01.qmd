@@ -1,0 +1,799 @@
+---
+subtitle: "Effective Data Visualisation with R"
+pagetitle: "Creating plots with ggplot2"
+author: "Emi Tanaka"
+date: "6th December 2022"
+host: "WOMBAT 2022"
+institute: "Monash University"
+strip-comments: true
+format: 
+  revealjs:
+    logo: images/monash-one-line-black-rgb.png
+    slide-number: true
+    theme: assets/monash.scss
+    show-slide-number: all
+    controls: true
+    width: 1280
+    height: 720
+    incremental: false
+    auto-stretch: false
+    css: [assets/custom.css, assets/pacman.css, assets/tachyons-addon.css]
+    include-after: |
+      <link rel="stylesheet" href="assets/syntax-highlight.css">
+      <link rel="stylesheet" href="assets/fontawesome-free-6.1.1-web/css/all.min.css">
+      <script src="assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
+callout-icon: false
+execute:
+  echo: true
+---
+
+
+## {#title-slide background-image="images/bg1.jpeg"}
+
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+source("setup.R")
+```
+
+```{r}
+#| child: _title-slide.qmd
+```
+
+
+
+## Summary of R graphics
+
+![](images/r-graphics-system.png)
+
+## Basic structure of `ggplot`
+
+![](images/ggplot-basic-str.png)
+
+1. **data** as `data.frame`
+2. a set of **aesthetic** mappings between variables in the data and visual properties
+3. at least one **layer** which describes how to render each observation
+
+
+## A layer in `ggplot`
+
+* A layer has five main components:
+   * `geom` - the geometric object to use display the data 
+   * `stat` - statistical transformation to use on the data 
+   * `data` - data to be displayed in this layer (usually inherited)
+   * `mapping` - aesthetic mappings (usually inherited)
+   * `position` - position adjustment
+
+
+## Illustrative data <img src="images/penguins-logo.png" width="50px" style="vertical-align: middle;"> Palmer penguins
+
+`penguins` data is from the `palmerpenguins` 📦
+
+```{r}
+library(palmerpenguins)
+str(penguins)
+```
+
+<img src="images/lter_penguins.png" width = "250px" style = "position:absolute;top:12%;right:8%;"/>
+<img src="images/culmen_depth.png" width = "450px" style = "position:absolute;bottom:15%;right:0%;border:2px solid black;"/>
+
+::: aside 
+Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081.
+:::
+
+
+
+
+
+## A histogram with `geom_histogram()`
+
+```{r geom-histogram}
+#| code-line-numbers: "1-2|3|"
+#| fig-height: 3
+ggplot(data = penguins, 
+       mapping = aes(x = bill_depth_mm)) +
+  geom_histogram()
+```
+* By default `ggplot2` uses 30 bins (`bins = 30`) when drawing histograms. 
+
+
+
+
+
+
+
+## Other layers for univariate data
+
+```{r}
+#| code-line-numbers: false
+p <- ggplot(penguins, aes(bill_depth_mm))
+```
+
+::: {.flex .pt3}
+
+::: {.w-30 .pr3 .fragment}
+
+```{r geom-density}
+#| code-line-numbers: false
+p + geom_density() 
+```
+
+:::
+
+::: {.w-30 .pr3 .fragment}
+
+```{r geom-freqpoly}
+#| code-line-numbers: false
+p + geom_freqpoly()
+```
+
+:::
+
+::: {.w-30 .pr3 .fragment}
+
+```{r geom-boxplot}
+#| code-line-numbers: false
+p + geom_boxplot()
+```
+
+:::
+
+
+
+:::
+
+
+::: flex
+
+::: {.w-40 .pr3 .fragment}
+
+```{r geom-violin}
+#| code-line-numbers: false
+p + geom_violin(aes(y = ""))
+```
+
+:::
+
+::: {.w-40 .pr3 .fragment}
+
+```{r geom-dotplot}
+#| code-line-numbers: false
+p + geom_dotplot()
+```
+
+:::
+
+
+:::
+
+
+
+::: notes
+
+* The default `geom_freqpoly` is showing the same statistic (`stat = "bin"`) as the default `geom_histogram` except one is using a bar (`geom = "bar"`) and the other is using a line (`geom = "path"`). 
+
+:::
+
+## Available `geom` layers in `ggplot2` 
+
+```{r geom, echo=FALSE}
+geoms <- help.search("^geom_", package = "ggplot2")
+geoms$matches %>% 
+  select(Entry, Title) %>% 
+  group_by(Title) %>% 
+  mutate(col = paste0("C", 1:n())) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = col, values_from = Entry) %>% 
+  mutate(geom = paste(C1, C2, C3, C4, sep = ", "),
+         geom = gsub(", NA", "", geom)) %>% 
+  select(geom, Title) %>% 
+  DT::datatable(colnames = c("geom", "Description"),
+                rownames = FALSE,
+                options = list(dom = 'tp', ordering=F, scrollY = "500px", paging = FALSE)) 
+```
+
+
+## Layer data
+
+```{r geom-histogram-data}
+#| code-line-numbers: "1-3|5|"
+#| output-location: fragment
+ghist <- ggplot(data = penguins, 
+                mapping = aes(x = bill_depth_mm)) +
+  geom_histogram() 
+
+layer_data(ghist, 1)
+```
+
+
+## Accessing layer data
+
+```{r geom-histogram-density}
+#| code-line-numbers: "|3"
+ggplot(data = penguins, 
+       mapping = aes(x = bill_depth_mm)) +
+  geom_histogram(aes(y = after_stat(density))) 
+```
+
+* Equivalent to the old syntaxes `y = stat(density)` and `y = ..density..` 
+
+::: notes
+
+* In this plot, the y-axis is showing density instead of count. 
+* This is signalled by using `y = after_stat(density)`. 
+* This syntax is equivalent to `y = stat(density)` or `y = ..density..`, which was the old syntax to refer to computed statistics. 
+
+
+:::
+
+
+
+
+## Statistical transformations 
+
+* For `geom_histogram()`, the default is `stat = "bin"`.
+* For `stat_bin()`, the default is `geom = "bar"`.
+* Every `geom` has a `stat` and vice versa
+
+::: flex
+
+::: {.w-33 .pr3 .fragment}
+
+```{r geom-hist}
+#| code-line-numbers: false
+p + geom_histogram()
+```
+
+:::
+
+::: {.w-33 .pr3 .fragment}
+
+```{r stat-bin}
+#| code-line-numbers: false
+p + stat_bin(geom = "bar")
+```
+
+:::
+
+::: {.w-33 .pr3 .fragment}
+
+```{r stat-line}
+#| code-line-numbers: false
+p + stat_bin(geom = "line")
+```
+
+:::
+:::
+
+## Available `stat` layers in `ggplot2`
+
+
+```{r stat, echo=FALSE}
+stats <- help.search("stat_", package = "ggplot2")
+stats$matches %>% 
+  select(Entry, Title) %>% 
+  group_by(Title) %>% 
+  mutate(col = paste0("C", 1:n())) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = col, values_from = Entry) %>% 
+  mutate(stats = paste(C1, C2, C3, sep = ", "),
+         stats = gsub(", NA", "", stats)) %>% 
+  select(stats, Title) %>% 
+  DT::datatable(colnames = c("stat", "Description"),
+                rownames = FALSE,
+                options = list(dom = 'tp', paging = FALSE, ordering=F, scrollY = "500px"))
+
+```
+
+## Aesthetic specifications 
+
+`vignette("ggplot2-specs")`
+
+* Aesthetic arguments for each layer are found in **documentation** <br>(e.g. `?geom_point`).
+* **Some common aesthetic specifications** are:
+
+::: {.flex}
+
+::: {.w-20 .fragment}
+
+`x` and `y`
+
+![](images/aes-pos.svg)
+
+:::
+
+::: {.w-20 .fragment}
+
+`alpha`
+
+![](images/aes-alpha.svg)
+
+:::
+
+::: {.w-20 .fragment}
+
+`color`
+
+![](images/aes-color.svg)
+
+:::
+
+::: {.w-20 .fragment}
+
+`fill`
+
+![](images/aes-fill.svg)
+
+:::
+
+::: {.w-20 .fragment}
+
+`size`
+
+![](images/aes-size.svg)
+
+:::
+
+
+:::
+
+
+
+## Example: a scatterplot with `geom_point()`
+
+```{r geom-point}
+#| output-location: column
+#| code-line-numbers: "|6-7"
+library(ggplot2)
+library(palmerpenguins)
+ggplot(penguins, 
+       aes(x = bill_depth_mm, 
+           y = bill_length_mm,
+           color = species,
+           size = body_mass_g)) +
+  geom_point()
+```
+
+* Notice that legends are automatically made for aesthetics
+
+## Aesthetic specification for points
+
+::: flex 
+
+::: w-60
+
+`shape`
+
+![](images/aes-shapes.svg)
+
+:::
+
+::: w-40
+
+`stroke` vs `size`
+
+![](images/aes-filled-shapes.svg)
+
+
+:::
+
+:::
+
+::: nonincremental
+
+* The default shape is "circle".
+* `stroke` and `fill` is only for the "filled" shapes.
+
+:::
+
+
+## Aesthetic specifications for lines
+
+::: flex
+
+::: {.w-20}
+
+`color`
+
+![](images/aes-line-color.svg)
+
+:::
+
+
+::: {.w-20}
+
+`linetype`
+
+![](images/aes-line-type.svg)
+
+:::
+
+::: {.w-20}
+
+`linewidth`
+
+![](images/aes-line-width.svg)
+
+:::
+
+
+
+::: {.w-20}
+
+`lineend`
+
+![](images/aes-line-end.svg)
+
+
+:::
+
+::: {.w-20}
+
+`linejoin`
+
+![](images/aes-line-join.svg)
+
+
+:::
+
+
+:::
+
+## Aesthetic or Attribute?
+
+```{r aes-map}
+#| output-location: fragment
+#| fig-height: 3
+ggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +
+  geom_point(aes(color = "dodgerblue"))
+```
+
+. . . 
+
+* When you supply values within `aes`, it assumes that it's a data variable. 
+* The string `"dodgerblue"` gets converted into a variable with one level and it gets colored by `ggplot`'s default color palette.
+
+
+
+## When your input is an attribute
+
+
+Don't put attributes inside `aes()`!
+
+```{r attr-map}
+#| code-line-numbers: 2
+ggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +
+  geom_point(color = "dodgerblue")
+```
+
+
+## Bonus tip: "as-is" operator
+
+* Use `I()` operator to mean "as-is" in aesthetic mapping.
+
+```{r I-map}
+#| code-line-numbers: 2
+ggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +
+  geom_point(aes(color = I("dodgerblue")))
+```
+
+
+## Attributes are for layers
+
+
+* Attributes should be defined in specific layers.
+
+```{r attr-in-ggplot}
+#| fig-height: 3.5
+ggplot(penguins, aes(x = bill_depth_mm, y = bill_length_mm),
+       color = "dodgerblue") +
+  geom_point()
+```
+
+
+* Notice how the points don't have the "dodgeblue" color.
+* Layers inherit data and the mapping from `ggplot()` but not attributes. 
+
+
+## The violin plot layer
+
+
+::: flex
+
+::: w-50
+
+```{r plot1-cut}
+ggplot(penguins, 
+       aes(x = island, y = body_mass_g)) +
+  geom_violin()
+```
+
+:::
+
+::: w-50 
+
+* There is one layer in this plot comprising of:
+  * inherited `data`: `penguins`
+  * inherited `mapping`: `aes(x = island, y = body_mass_g)`
+  * `geom`: violin
+  * `stat`: density for the y-axis (`ydensity`)
+  * `position`: dodge
+  
+
+:::
+
+:::
+
+## You can add more than one layer
+
+```{r plot1-layer2}
+#| code-line-numbers: "3-4"
+ggplot(penguins, 
+       aes(x = island, y = body_mass_g)) +
+  geom_violin() +
+  geom_boxplot(width = 0.1)
+```
+
+* We now have the boxplot layer on top of the violin plot layer.
+
+
+
+## The order of the layers matters
+
+```{r plot1-layer-order}
+#| code-line-numbers: "3-4"
+ggplot(penguins, 
+       aes(x = island, y = body_mass_g)) +
+  geom_boxplot(width = 0.1) +
+  geom_violin()
+```
+
+
+* You can't see the boxplot here because it's been hidden by the violin plot.
+
+
+
+## Inheriting data and mapping
+
+* A layer inherits the data and mapping from the initialised ggplot object by default 
+
+<center>
+<img src= "images/ggplot-multiple-layers.png" width="70%">
+</center>
+
+
+## Layer-specific data and aesthetic mapping
+
+![](images/ggplot-multiple-layers-data-mapping.png)
+
+* For each layer, aesthetic and/or data can be overwritten
+
+## Illustrative data 🚜 Iowa farmland values by county
+
+```{r}
+data(wallace.iowaland, package = "agridat")
+str(wallace.iowaland)
+
+map_data("county", region = "iowa")
+```
+
+
+## Layer specific aesthetic {auto-animate=true}
+
+```{r plot2-inheritance, fig.width = 8, fig.height = 3, message = FALSE}
+#| code-line-numbers: "|2|3"
+#| fig-height: 5
+ggplot(wallace.iowaland, aes(x = long, y = lat)) +
+  geom_point(size = 4, shape = "square", color = "black") +
+  geom_point(aes(color = yield), size = 2) 
+```
+
+## Layer specific data {auto-animate=true}
+
+```{r plot3-inheritance, fig.width = 8, fig.height = 3, message = FALSE}
+#| code-line-numbers: "2-3"
+#| fig-height: 5
+ggplot(wallace.iowaland, aes(x = long, y = lat)) +
+  geom_polygon(data = map_data("county", region = "iowa"),
+               aes(group = group), fill = "white", color = "black") +
+  geom_point(size = 4, shape = "square", color = "black") +
+  geom_point(aes(color = yield), size = 2) 
+```
+
+## Layer specific data as a function of inherited data {auto-animate=true}
+
+```{r plot4-inheritance, fig.width = 8, fig.height = 3, message = FALSE}
+#| code-line-numbers: "6-7"
+#| fig-height: 5
+ggplot(wallace.iowaland, aes(x = long, y = lat)) +
+  geom_polygon(data = map_data("county", region = "iowa"),
+               aes(group = group), fill = "white", color = "black") +
+  geom_point(size = 4, shape = "square", color = "black") +
+  geom_point(aes(color = yield), size = 2) +
+  geom_label(data = function(.data) subset(.data, yield  > quantile(yield, 0.95)),
+            aes(label = county), nudge_y = -0.1, size = 3)
+```
+
+
+
+
+## Annotation layer
+
+
+* `annotate()` allows you to add elements to plots without a `data.frame`
+
+```{r annotate, fig.width = 7, fig.height = 3}
+#| code-line-numbers: 5-6
+ggplot(wallace.iowaland, aes(x = long, y = lat)) +
+  geom_polygon(data = map_data("county", region = "iowa"),
+               aes(group = group), fill = "white", color = "black") +
+  geom_point(aes(color = yield), size = 2) +
+  annotate("segment", x = -95, y = 40.3, xend = -94.5, yend = 40.6, color = "red") +
+  annotate("label", x = -95, y = 40.3, label = "Iowa", color = "red") 
+```
+
+
+## Facets 
+
+::: incremental
+
+* Faceting in `ggplot2` refers to partitioning of the plot region to multiple panels each showing a different subset of the data.
+* There are three types of faceting:
+
+  * `facet_null()` (the default),
+  * `facet_wrap()`, and
+  * `facet_grid()`.
+  
+* We don't really use `facet_null()` much.
+
+:::
+
+
+## Illustrative data 🌱 growth of soybean
+
+```{r}
+data(davidian.soybean, package = "agridat")
+str(davidian.soybean)
+```
+
+::: f3
+
+* The data contains:
+  * `plot`: the plot code
+  * `variety`: the code (`F` = commercial and `P` = experimental) for which soybean variety
+  * `year`: the year it was grown (1988-1990)
+  * `day` days after planting
+  * `weight` weight of soybean leaves
+
+:::
+
+
+
+## `facet_wrap()`
+
+* `facet_wrap()` divides the data into mutually exclusive subset based on the input variable and create subplots based on the data in the corresponding panel.
+
+```{r facet-wrap-demo, fig.height = 2}
+#| code-line-numbers: "|3"
+ggplot(davidian.soybean, aes(day, weight)) + 
+  geom_point() +
+  facet_wrap(~year)
+```
+
+
+## Wrapping many panels
+
+* `facet_wrap` "wraps" the panels into 2d if you have many panels
+
+```{r facet-wrap-demo-wrap}
+#| code-line-numbers: "|3"
+#| fig-height: 4
+ggplot(davidian.soybean, aes(day, weight)) + 
+  geom_point() +
+  facet_wrap(~plot)
+```
+
+
+## Wrapping by a continuous variable
+
+* Discretize continuous variable using `cut()`, `cut_width()`, `cut_interval()` or `cut_number()`.
+
+```{r facet-wrap-demo-cont, fig.height = 3}
+#| code-line-numbers: "|3"
+ggplot(davidian.soybean, aes(day, weight)) + 
+  geom_point() +
+  facet_wrap(~cut_number(day, 4))
+```
+
+
+
+
+
+## Changing the scales for each panel
+
+* By default the scales are shared across the panels but you can choose to have scales built independently for each panel:
+
+```{r facet-wrap-demo-cont-scales, fig.height = 3}
+#| output-location: column
+#| code-line-numbers: "|4-5"
+#| fig-height: 2.5
+#| fig-width: 4
+ggplot(davidian.soybean, 
+       aes(day, weight)) + 
+  geom_point() +
+  facet_wrap(~cut_number(day, 4), 
+             scales = "free")
+```
+
+* If you want the scale to be independent only in one dimension then you can use `scales = "free_x"` and `scales = "free_y"`.
+
+
+
+## Wrapping with more than one variables
+
+* If you want to wrap the facet by more than one variable, you can combine the variables by using `+`:
+
+```{r facet-wrap-demo-interaction, fig.height = 3}
+#| code-line-numbers: "|4"
+#| fig-height: 2.5
+#| fig-width: 5
+#| output-location: column
+ggplot(davidian.soybean, 
+       aes(day, weight)) + 
+  geom_point() +
+  facet_wrap(~ year + variety)
+```
+
+* Alternatively, you can use `vars()` instead of `+`.
+
+
+
+
+## `facet_grid()`
+
+* Alternatively, you can use `facet_grid()` to lay out the panels in a 2d grid:
+
+```{r facet-grid-demo, fig.height = 3}
+#| code-line-numbers: "|3"
+ggplot(davidian.soybean, aes(day, weight)) + 
+  geom_point() +
+  facet_grid(variety ~ year)
+```
+
+
+## Missing facet variables
+
+* If a layer data is missing the faceting variable(s), then the layer will be shown across all panels based on all of the layer data
+
+```{r facet-all, fig.height = 2.5}
+#| code-line-numbers: "|2"
+#| fig-height: 2
+ggplot(davidian.soybean, aes(day, weight)) + 
+  geom_point(data = function(.data) select(.data, -c(variety, year)), color = "grey70") +
+  geom_point() +
+  facet_grid(variety ~ year)
+```
+
+* This is a nice way to creating a "shadow" across all panels.
+
+
+
+
+# <i class="fas fa-users"></i> {background-color="#D93F00"}
+
+
+[<i class="fas fa-directions"></i> Your turn!]{.f-headline}
+
+```{r}
+#| echo: false
+#| cache: false
+library(countdown)
+countdown(15)
+```
+
+`>` Go to [ebsmonash.shinyapps.io/edvr-exercise-01](https://ebsmonash.shinyapps.io/edvr-exercise-01)  
+`>` OR go to R console and enter:
+
+[`learnr::run_tutorial("exercise-01", package = "edvr.workshop")`]{.f3}
+
