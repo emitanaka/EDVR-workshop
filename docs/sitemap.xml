@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://emitanaka.org/EDV-workshop/index.html</loc>
-    <lastmod>2022-12-05T08:29:42.000Z</lastmod>
+    <lastmod>2022-12-05T09:09:17.522Z</lastmod>
   </url>
   <url>
     <loc>https://emitanaka.org/EDV-workshop/slides/slide-01.html</loc>
-    <lastmod>2022-12-05T08:29:59.736Z</lastmod>
+    <lastmod>2022-12-05T09:11:09.891Z</lastmod>
   </url>
   <url>
     <loc>https://emitanaka.org/EDV-workshop/slides/slide-00.html</loc>
-    <lastmod>2022-12-05T08:47:58.607Z</lastmod>
+    <lastmod>2022-12-05T09:02:52.661Z</lastmod>
   </url>
   <url>
     <loc>https://emitanaka.org/EDV-workshop/slides/datastory2.html</loc>
@@ -35,5 +35,9 @@
   <url>
     <loc>https://emitanaka.org/EDV-workshop/about.html</loc>
     <lastmod>2022-12-05T08:31:16.934Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emitanaka.org/EDV-workshop/pkg/inst/tutorials/exercise-01/exercise-01.html</loc>
+    <lastmod>2022-12-05T09:19:16.675Z</lastmod>
   </url>
 </urlset>
