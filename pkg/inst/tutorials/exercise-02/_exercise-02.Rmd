@@ -69,7 +69,7 @@ knitr::opts_chunk$set(
 
 ::: aim
 
-In this exercise, there are several data that may be of interest to you. Pick your own adventure by selecting the data of your interest, study the variables that contain it and try visualising aspects of the data. There are no correct answers here.
+In this exercise, there are several data that may be of interest to you. Pick your own adventure by selecting the data of your interest, study the variables that contain it and try visualising aspects of the data. There are no correct answers here. There are some code provided to aid you in how to begin.
 
 :::
 
@@ -86,7 +86,8 @@ str(apra_hospital_coverage)
 ```
 
 ```{r apra, exercise = TRUE}
-
+ggplot(apra_hospital_coverage, aes(Quarter, AUST)) +
+  geom_line()
 ```
 
 ## Australian Census: Birth place by sex
@@ -96,7 +97,11 @@ str(census_bpsex)
 ```
 
 ```{r census, exercise = TRUE}
-
+census_bpsex %>% 
+  filter(birth != "Total") %>% 
+  mutate(birth = fct_reorder(birth, percentage)) %>% 
+  ggplot(aes(percentage, birth)) +
+  geom_col()
 ```
 
 ## City of Casey: Summary residential community emissions
@@ -116,7 +121,10 @@ str(au_covid)
 ```
 
 ```{r covid, exercise = TRUE}
-
+casey_emissions %>% 
+  filter(!is.na(total_elect)) %>% 
+  ggplot() +
+  geom_sf(aes(geometry = geometry, fill = total_elect))
 ```
 
 
@@ -127,7 +135,11 @@ str(epa_airquality)
 ```
 
 ```{r epa, exercise = TRUE}
-
+epa_airquality %>% 
+  filter(param_id == "NO") %>% 
+  ggplot(aes(sample_datetime, value)) + 
+  geom_line() +
+  facet_grid(sp_name ~ .)
 ```
 
 
