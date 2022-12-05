@@ -275,7 +275,21 @@ Healey, Christopher G. 1992. “Visualization of Multivariate Data Using Preatte
 
 ## Color to [distinguish]{.monash-blue} 
 
+```{r}
+colorspace::hcl_palettes("Qualitative", plot = TRUE, n = 7)
+```
+
+
 ## Color to [highlight]{.monash-blue} 
+
+
+```{r highlight}
+ggplot(economics_long, aes(date, value)) +
+  geom_line() +
+  geom_line(data = ~filter(., variable=="unemploy"),
+            color = "red") +
+  facet_wrap(~variable, scale = "free_y")
+```
 
 
 # <i class="fas fa-eye"></i> Gestalt principles {background-color="#006DAE"}
