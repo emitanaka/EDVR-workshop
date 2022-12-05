@@ -44,6 +44,8 @@
 </style>
 ```{r, include = FALSE}
 library(learnr)
+library(knitr)
+library(maps)
 knitr::knit_hooks$set(class = function(before, options, envir) {
   if(before) {
     sprintf("<div class='%s'>", options$class)

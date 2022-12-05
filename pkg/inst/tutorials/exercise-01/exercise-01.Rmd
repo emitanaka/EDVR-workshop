@@ -246,7 +246,7 @@ str(nass.corn)
 str(nass.soybean)
 ```
 
-## Exercise 1
+### Exercise 1
 
 ```{r hex01s, echo = FALSE, class = "target", message = FALSE, warning = FALSE}
 wheat_corn_data <- left_join(nass.wheat, 
@@ -277,7 +277,7 @@ wheat_corn_data <- left_join(nass.wheat,
 ```{r hex01-solution, ref.label="hex01s"}
 ```
 
-## Exercise 2
+### Exercise 2
 
 ```{r hex02s, echo = FALSE, class = "target"}
 crops_data <- bind_rows(mutate(nass.wheat, crop = "Wheat"),
@@ -307,7 +307,7 @@ crops_data <- bind_rows(mutate(nass.wheat, crop = "Wheat"),
 ```
 
 
-## Exercise 3
+### Exercise 3
 
 ```{r hex03s, echo = FALSE, class = "target"}
 wheat2011_data <- nass.wheat %>% 
@@ -336,7 +336,7 @@ ggplot(wheat2011_data, aes(___, yield)) +
 ```{r hex03-solution, ref.label="hex03s"}
 ```
 
-## Exercise 4
+### Exercise 4
 
 Let's draw a choropleth US map of the wheat yield in 2011. 
 
@@ -372,7 +372,7 @@ ggplot(wheat2011_data_with_map, aes(___, ___)) +
 ```
 
 
-## Exercise 5
+### Exercise 5
 
 Consider fitting a model to the log of the yield of wheat (with base 10) with year as a covariate as shown below in the first line of code. Try constructing a residual plot based on this fit. What do you think of the fit of the model?
 
@@ -398,7 +398,7 @@ ggplot(nass.wheat, aes(year, residuals(fit))) +
 
 
 
-## Exercise 6
+### Exercise 6
 
 ```{r}
 str(minnesota.barley.weather)
@@ -422,7 +422,7 @@ ggplot(minnesota.barley.weather, aes(___, ___)) +
 ```{r hex06-solution, ref.label="hex06s"}
 ```
 
-## Exercise 7
+### Exercise 7
 
 ```{r}
 str(economics_long)
@@ -471,7 +471,7 @@ ggplot(economics_long, aes(___, value01)) +
 ```
 
 
-## Exercise 8
+### Exercise 8
 
 ```{r}
 str(economics_long)
