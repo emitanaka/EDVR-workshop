@@ -11,9 +11,9 @@ Welcome to the [effective data visualisation with R]{style="color:#006DAE;"} wor
 
 ## Materials
 
-All materials are hosted on a GitHub repo [here]() and can be downloaded [here as a zip file]() (including the website, slides and exercises).
+All materials are hosted on a GitHub repo [here](https://github.com/emitanaka/EDVR-workshop) and can be downloaded [here as a zip file](https://github.com/emitanaka/EDVR-workshop/archive/refs/heads/master.zip) (including the website, slides and exercises).
 
-Once the material is downloaded, open the `docs/index.html` in a browser to see this website. 
+Once the material is downloaded, open the `docs/index.html` in a browser to see this website ([emitanaka.org/EDVR-workshop](https://emitanaka.org/EDVR-workshop/)). 
 
 ## Installation
 
@@ -39,7 +39,7 @@ schedule %>%
   mutate(time = glue::glue("{sprintf('%.2d', hour(Start))}:{sprintf('%.2d', minute(Start))} - {sprintf('%.2d', hour(End))}:{sprintf('%.2d', minute(End))}"),
          url = case_when(Type=="Session" | Activity == "Introduction" ~ sprintf("[<i class='fab fa-html5'></i>](slides/slide-%.2d.html)", No),
                          TRUE ~ ""),
-         Activity = case_when(Type=="Practice" ~ paste('<em>Exercise</em>', sprintf("[<i class='fas fa-tools'></i>](https://ebsmonash.shinyapps.io/edvr-ex%.2d/)", No)),
+         Activity = case_when(Type=="Practice" ~ paste('<em>Exercise</em>', sprintf("[<i class='fas fa-tools'></i>](https://ebsmonash.shinyapps.io/edvr-exercise-%.2d/)", No)),
                               Type=="Session" & No %in% 1:3 ~ paste0("<span style='color:#006DAE;'>", Activity, "</span>"),
                               
                               TRUE ~ Activity)) %>% 
