@@ -13,3 +13,4 @@ docs/slides/compute.R
 .httr-oauth
 .DS_Store
 pkg/data-raw/
+rsconnect/

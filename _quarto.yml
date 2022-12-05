@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 website:
-  site-url: "https://emitanaka.org/EDV-workshop/"
-  repo-url: "https://github.com/emitanaka/EDV-workshop"
+  site-url: "https://emitanaka.org/EDVR-workshop/"
+  repo-url: "https://github.com/emitanaka/EDVR-workshop"
   title: "Effective Data Visualisation with R"
   repo-actions: [edit, issue]
   navbar:

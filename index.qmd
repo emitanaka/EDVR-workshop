@@ -15,13 +15,6 @@ All materials are hosted on a GitHub repo [here](https://github.com/emitanaka/ED
 
 Once the material is downloaded, open the `docs/index.html` in a browser to see this website ([emitanaka.org/EDVR-workshop](https://emitanaka.org/EDVR-workshop/)). 
 
-## Installation
-
-```{r}
-#| eval: false
-install.packages(c("remotes", "learnr"))
-remotes::install_github("emitanaka/EDVR-workshop/pkg")
-```
 
 
 ## Schedule
@@ -46,6 +39,17 @@ schedule %>%
   select(Time = time, url, Activity) %>% 
   knitr::kable(col.names = c("Time", "Slides", "Activity"),
                align = "lcl")
+```
+
+
+## Installation
+
+This is only needed if the exercise links above do not work for you.
+
+```{r}
+#| eval: false
+install.packages(c("remotes", "learnr"))
+remotes::install_github("emitanaka/EDVR-workshop/pkg")
 ```
 
 

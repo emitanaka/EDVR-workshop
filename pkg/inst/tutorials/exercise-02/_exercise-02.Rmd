@@ -1,0 +1,133 @@
+---
+title: "Exercise 2: Pick your own adventure"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+<style>
+.aim {
+  padding-left: 40px;
+}
+
+.aim:before {
+  position: absolute;
+  content: "🎯";
+  margin-left: -20px;
+}
+
+
+.target {
+  border: 3px solid black;
+  padding: 10px;
+  padding-top: 35px;
+  margin-bottom: 10px;
+}
+.target:before {
+  position: absolute;
+  content: "🎯 your target plot";
+  padding: 5px;
+  margin-left: -13px;
+  margin-top: -38px;
+  background-color: #003366;
+  font-size: 12pt;
+  border: 3px solid black;
+  color: white;
+}
+.solution {
+  padding-top: 20px;
+}
+.solution:before {
+  position: absolute;
+  content: "solution";
+  text-decoration: underline;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-top: -20px;
+  color: rgba(0, 51, 102, 0.3);
+}
+</style>
+```{r, include = FALSE}
+library(learnr)
+knitr::knit_hooks$set(class = function(before, options, envir) {
+  if(before) {
+    sprintf("<div class='%s'>", options$class)
+  } else {
+    "</div>"
+  }
+})
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+
+## Objective  {data-progressive=FALSE}
+
+::: aim
+
+In this exercise, there are several data that may be of interest to you. Pick your own adventure by selecting the data of your interest, study the variables that contain it and try visualising aspects of the data. There are no correct answers here.
+
+:::
+
+
+```{r pkgs, message = FALSE, warning = FALSE}
+library(tidyverse) # contains ggplot2
+library(edvr.workshop) # contains local Aussie datasets
+```
+
+## APRA: hospital treatment coverage data
+
+```{r data-apra}
+str(apra_hospital_coverage)
+```
+
+```{r apra, exercise = TRUE}
+
+```
+
+## Australian Census: Birth place by sex
+
+```{r data-census}
+str(census_bpsex)
+```
+
+```{r census, exercise = TRUE}
+
+```
+
+## City of Casey: Summary residential community emissions
+
+```{r data-casey}
+str(casey_emissions)
+```
+
+```{r casey, exercise = TRUE}
+
+```
+
+## Covid-19 data for Australia
+
+```{r data-covid}
+str(au_covid)
+```
+
+```{r covid, exercise = TRUE}
+
+```
+
+
+## EPA Vic: Air Watch Data
+
+```{r data-epa}
+str(epa_airquality)
+```
+
+```{r epa, exercise = TRUE}
+
+```
+
+
