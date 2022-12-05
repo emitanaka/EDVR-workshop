@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.1.132">
 
   <meta name="author" content="Emi Tanaka">
-  <title>Wrap up</title>
+  <title>Effective data visualistion</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,74 +28,9 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="assets/custom.css">
-  <link rel="stylesheet" href="assets/pacman.css">
   <link rel="stylesheet" href="assets/tachyons-addon.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -385,267 +320,382 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-  <script src="../site_libs/pymjs-1.3.2/pym.v1.js"></script>
-  <script src="../site_libs/widgetframe-binding-0.3.1/widgetframe.js"></script>
+  
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 
-<section id="title-slide" class="slide level2 center" data-background-image="images/bg1.jpeg">
-<h2></h2>
-<div class="title-box">
-<h2>
-Wrap up
-</h2>
-<h3>
-<span class="monash-gray50">Effective Data Visualisation with R</span>
-</h3>
-<p>👩🏻‍💻 <span class="author">Emi Tanaka @ Monash University</span></p>
-<div style="overflow: hidden; height: 1.2em;">
-<ul class="content__container__list center" style="text-align: center">
-<li class="content__container__list__item">
-<i class="fa-solid fa-envelope"></i> emi.tanaka@monash.edu
-</li>
-<li class="content__container__list__item">
-<i class="fa-brands fa-twitter"></i> <span class="citation" data-cites="statsgen">@statsgen</span>
-</li>
-<li class="content__container__list__item">
-<i class="fa-brands fa-github"></i> github.com/emitanaka
-</li>
-<li class="content__container__list__item">
-<i class="fa-solid fa-globe"></i> emitanaka.org
-</li>
-</ul>
-</div>
-</div>
-<p><br><br></p>
-<div class="absolute bottom-0 monash-white w-100" style="">
-<p><span class="monash-white fl strokeme">6th December 2022</span> <span class="fr monash-white strokeme">WOMBAT 2022</span></p>
-</div>
-</section>
 <section>
-<section id="file-formats" class="title-slide slide level1 center" data-background-color="#006DAE">
-<h1><i class="fas fa-save"></i> File formats</h1>
+<section id="data-story-birth-place" class="title-slide slide level1 center" data-background-color="#006DAE">
+<h1>Data story <i class="fas fa-book-open"></i> birth place</h1>
 
 </section>
-<section id="are-these-figures-different" class="slide level2">
-<h2>Are these figures different?</h2>
-<div class="flex">
-<div class="w-50">
+<section id="birth-place-from-the-2021-australian-census" class="slide level2 scrollable">
+<h2>Birth place from the 2021 Australian Census</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="slide-04_files/figure-revealjs/plot-1.png" width="500" height="500"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="w-50">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="slide-04_files/figure-revealjs/plot-1.svg" width="500" height="500"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="monash-bg-white ba" style="position:absolute;bottom:8%;left:4%;padding:10px;width:100%;">
-<p>Both figures used the same code below to produce the figure:<br></p>
-<p><code> ggplot(cars, aes(speed, dist)) + geom_point() </code> <br> but I saved one to a <b>png</b> file and the other as a <b>svg</b> file.</p>
-</div>
-</div>
-</section>
-<section id="communicating-figures" class="slide level2">
-<h2>Communicating Figures</h2>
-<div style="font-size: 0.9em;">
-<ul>
-<li class="fragment">There are two main formats for graphics:
-<ul>
-<li class="fragment"><strong>Raster formats</strong> contain description of each pixel. Common formats are:
-<ul>
-<li class="fragment"><code>jpg</code> (or <code>jpeg</code>) uses a lossy data compression that results in some loss of information but usually a small file size.</li>
-<li class="fragment"><code>png</code> uses a lossless data compression and works well if the image has uniform colors.</li>
-</ul></li>
-<li class="fragment"><strong>Vector formats</strong> contain a geometric description and hence render smoothly at any display size. Common formats include <code>svg</code>, <code>pdf</code> and <code>eps</code>. E.g. <a href="https://raw.githubusercontent.com/numbats/cwd/master/lectures/images/rlogo.svg">svg</a> and its <a href="view-source:https://raw.githubusercontent.com/numbats/cwd/master/lectures/images/rlogo.svg">source</a>.</li>
-</ul></li>
-<li class="fragment">A vector format scales well to any display size, however, the file size may become prohibitively big when there are many geometric objects (i.e.&nbsp;displaying many data).</li>
-</ul>
-</div>
-</section>
-<section id="exporting-plots" class="slide level2">
-<h2>Exporting plots</h2>
-<ul>
-<li>To export plots made by <code>ggplot2</code>, use <code>ggsave()</code>.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|1|2-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(speed, dist)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"myplot"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3"></a>       <span class="at">dev =</span> <span class="st">"png"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4"></a>       <span class="at">plot =</span> g,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>       <span class="at">width =</span> <span class="dv">6</span>, </span>
-<span id="cb1-6"><a href="#cb1-6"></a>       <span class="at">height =</span> <span class="dv">4</span>,</span>
-<span id="cb1-7"><a href="#cb1-7"></a>       <span class="at">units =</span> <span class="st">"in"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>       <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Unfortunately you may need to adjust the font size when you check the exported plot!</li>
-</ul>
-</section></section>
-<section>
-<section id="interactive-plots" class="title-slide slide level1 center" data-background-color="#006DAE">
-<h1><i class="fas fa-expand-arrows-alt"></i> Interactive plots</h1>
 
-</section>
-<section id="interactive-plots-1" class="slide level2">
-<h2>Interactive plots</h2>
-<ul>
-<li><code>plotly</code> translates <code>ggplot</code> objects into <code>plotly</code> interactive graphics.</li>
-</ul>
-<div class="flex">
-<div class="w-50">
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2-3|1,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(speed, dist)) <span class="sc">+</span> </span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">ggplotly</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="w-50">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="htmlwidget-dc8948186c09bdace094" style="width:300px;height:270px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dc8948186c09bdace094">{"x":{"url":"slide-04_files/figure-revealjs//widgets/widget_ggplotly.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li>This doesn’t work well for some (usually complex) type of plots.</li>
-</ul>
-</section>
-<section id="interactive-plots-with-js-through-r" class="slide level2 scrollable">
-<h2>Interactive plots with JS through R</h2>
-<ul>
-<li>State-of-the-art for interactive plots is <strong>JS</strong></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>No need to learn JS!</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Many JS library for plotting are available via an R package:</li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th>JS</th>
-<th>R package</th>
-</tr>
-</thead>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Birth place </th>
+   <th style="text-align:right;"> Count </th>
+   <th style="text-align:right;"> % </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td><a href="https://www.chartjs.org/">Chart.js</a></td>
-<td><a href="https://github.com/Tutuchan/chartjs"><code>chartjs</code></a>, <a href="https://github.com/JohnCoene/charter"><code>charter</code></a></td>
-</tr>
-<tr class="even">
-<td><a href="https://dygraphs.com/">Dygraphs</a></td>
-<td><a href="https://github.com/rstudio/dygraphs"><code>dygraphs</code></a></td>
-</tr>
-<tr class="odd">
-<td><a href="https://d3js.org/">D3.js</a></td>
-<td><a href="https://github.com/rstudio/r2d3"><code>r2d3</code></a>, <a href="https://github.com/christophergandrud/networkD3"><code>networkD3</code></a></td>
-</tr>
-<tr class="even">
-<td><a href="https://echarts.apache.org/en/index.html">ECharts</a></td>
-<td><a href="https://github.com/JohnCoene/echarts4r"><code>echarts4r</code></a></td>
-</tr>
-<tr class="odd">
-<td><a href="https://developers.google.com/chart">Google Charts</a></td>
-<td><a href="https://github.com/mages/googleVis"><code>googleVis</code></a></td>
-</tr>
-<tr class="even">
-<td><a href="https://www.highcharts.com/">Highcharts</a></td>
-<td><a href="https://github.com/jbkunst/highcharter"><code>highcharter</code></a></td>
-</tr>
-<tr class="odd">
-<td><a href="https://plotly.com/javascript/">Plotly</a></td>
-<td><a href="https://github.com/plotly/plotly.R"><code>plotly</code></a></td>
-</tr>
-<tr class="even">
-<td><a href="https://visjs.org/">Vis.js</a></td>
-<td><a href="https://github.com/datastorm-open/visNetwork"><code>visNetwork</code></a></td>
-</tr>
-<tr class="odd">
-<td><a href="https://observablehq.com/@observablehq/plot">Observable Plot</a></td>
-<td><a href="https://github.com/juba/obsplot"><code>obsplot</code></a></td>
-</tr>
-<tr class="even">
-<td><a href="https://vega.github.io/vega/">Vega and Vega-Lite</a></td>
-<td><a href="https://github.com/vegawidget/vegawidget"><code>vegawidget</code></a>, <a href="https://github.com/vegawidget/altair"><code>altair</code></a>, <a href="https://github.com/vegawidget/virgo"><code>virgo</code></a>, <a href="https://github.com/vegawidget/vegabrite"><code>vegabrite</code></a></td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> Australia </td>
+   <td style="text-align:right;"> 17,020,423 </td>
+   <td style="text-align:right;"> 66.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Not Stated </td>
+   <td style="text-align:right;"> 1,358,656 </td>
+   <td style="text-align:right;"> 5.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> England </td>
+   <td style="text-align:right;"> 927,489 </td>
+   <td style="text-align:right;"> 3.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:right;"> 759,171 </td>
+   <td style="text-align:right;"> 3.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> India </td>
+   <td style="text-align:right;"> 673,353 </td>
+   <td style="text-align:right;"> 2.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> China </td>
+   <td style="text-align:right;"> 549,614 </td>
+   <td style="text-align:right;"> 2.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Zealand </td>
+   <td style="text-align:right;"> 530,498 </td>
+   <td style="text-align:right;"> 2.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Philippines </td>
+   <td style="text-align:right;"> 293,891 </td>
+   <td style="text-align:right;"> 1.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vietnam </td>
+   <td style="text-align:right;"> 257,995 </td>
+   <td style="text-align:right;"> 1.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Africa </td>
+   <td style="text-align:right;"> 189,208 </td>
+   <td style="text-align:right;"> 0.7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaysia </td>
+   <td style="text-align:right;"> 165,613 </td>
+   <td style="text-align:right;"> 0.7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:right;"> 163,326 </td>
+   <td style="text-align:right;"> 0.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sri Lanka </td>
+   <td style="text-align:right;"> 131,901 </td>
+   <td style="text-align:right;"> 0.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nepal </td>
+   <td style="text-align:right;"> 122,503 </td>
+   <td style="text-align:right;"> 0.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Scotland </td>
+   <td style="text-align:right;"> 118,495 </td>
+   <td style="text-align:right;"> 0.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Thailand </td>
+   <td style="text-align:right;"> 83,779 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Korea South </td>
+   <td style="text-align:right;"> 102,096 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Germany </td>
+   <td style="text-align:right;"> 101,252 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hong Kong </td>
+   <td style="text-align:right;"> 100,152 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pakistan </td>
+   <td style="text-align:right;"> 89,630 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United States America </td>
+   <td style="text-align:right;"> 101,313 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Indonesia </td>
+   <td style="text-align:right;"> 87,077 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greece </td>
+   <td style="text-align:right;"> 92,307 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iraq </td>
+   <td style="text-align:right;"> 92,920 </td>
+   <td style="text-align:right;"> 0.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lebanon </td>
+   <td style="text-align:right;"> 87,341 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ireland </td>
+   <td style="text-align:right;"> 80,934 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iran </td>
+   <td style="text-align:right;"> 70,900 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fiji </td>
+   <td style="text-align:right;"> 68,947 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 59,803 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Singapore </td>
+   <td style="text-align:right;"> 61,057 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Netherlands </td>
+   <td style="text-align:right;"> 66,480 </td>
+   <td style="text-align:right;"> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Japan </td>
+   <td style="text-align:right;"> 45,266 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Taiwan </td>
+   <td style="text-align:right;"> 49,505 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:right;"> 50,223 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bangladesh </td>
+   <td style="text-align:right;"> 51,491 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Poland </td>
+   <td style="text-align:right;"> 45,880 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brazil </td>
+   <td style="text-align:right;"> 46,718 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Egypt </td>
+   <td style="text-align:right;"> 43,212 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Croatia </td>
+   <td style="text-align:right;"> 43,312 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cambodia </td>
+   <td style="text-align:right;"> 39,041 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Macedonia </td>
+   <td style="text-align:right;"> 41,782 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zimbabwe </td>
+   <td style="text-align:right;"> 39,714 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkey </td>
+   <td style="text-align:right;"> 38,572 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myanmar </td>
+   <td style="text-align:right;"> 39,168 </td>
+   <td style="text-align:right;"> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> France </td>
+   <td style="text-align:right;"> 36,025 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malta </td>
+   <td style="text-align:right;"> 35,419 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Papua New Guinea </td>
+   <td style="text-align:right;"> 29,985 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:right;"> 29,866 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wales </td>
+   <td style="text-align:right;"> 29,248 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Samoa </td>
+   <td style="text-align:right;"> 28,111 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bosnia Herzegov </td>
+   <td style="text-align:right;"> 26,173 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritius </td>
+   <td style="text-align:right;"> 25,978 </td>
+   <td style="text-align:right;"> 0.1 </td>
+  </tr>
 </tbody>
 </table>
-</div>
-</section></section>
-<section>
-<section id="d-plots" class="title-slide slide level1 center" data-background-color="#006DAE">
-<h1><i class="fas fa-expand-arrows-alt"></i> 3D plots</h1>
 
-</section>
-<section id="d-plots-1" class="slide level2">
-<h2>3D plots</h2>
-<ul>
-<li><code>ggplot2</code> is best for static 2D plots</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>For 3D plots, you may like to use some modern interactive tools instead</li>
-</ul>
-<iframe src="https://echarts4r.john-coene.com/articles/threed" width="100%" height="350px" class="ba">
-</iframe>
+</div>
 </div>
 </section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<p>For continued learning (all accessible free online)</p>
-<ul>
-<li><a href="https://www.data-to-viz.com/">From Data to Viz</a></li>
-<li><a href="https://r-graph-gallery.com/">The R Graph Gallery</a></li>
-<li><a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization by Claus O. Wilke</a></li>
-<li><a href="https://ggplot2-book.org/">ggplot2: elegant graphics for data analysis (work in progress 3rd edition)</a></li>
-</ul>
+<section id="birth-place-from-the-2021-australian-census-1" class="slide level2">
+<h2>Birth place from the 2021 Australian Census</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="datastory1_files/figure-revealjs/census2021-part1-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Which birth place is the third largest among people in Australia?</p>
+</div>
 </section>
-<section id="community" class="slide level2">
-<h2>Community</h2>
-<p>Learn with others!</p>
+<section id="birth-place-from-the-2021-australian-census-2" class="slide level2">
+<h2>Birth place from the 2021 Australian Census</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="datastory1_files/figure-revealjs/census2021-part2-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><i class="fa-solid fa-face-meh" style=" transform: rotate(-45deg)"></i> Can you read the labels without tilting your head?</p>
+</div>
+</section>
+<section id="birth-place-from-the-2021-australian-census-3" class="slide level2 scrollable">
+<h2>Birth place from the 2021 Australian Census</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="datastory1_files/figure-revealjs/census2021-part4-1.png" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>What’s the data story?</p>
+</div>
+</section>
+<section id="india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show" class="slide level2" data-background-color="#746FB2">
+<h2>India now third most common place of birth of Australian residents, census results show</h2>
+<div class="flex">
+<div class="w-60">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="datastory1_files/figure-revealjs/census2021-part5-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="w-40 f3">
+<p><br><br><br></p>
 <ul>
-<li><a href="https://www.rfordatasci.com/">R for data science online learning community</a></li>
-<li><a href="https://community.rstudio.com/tag/ggplot2">RStudio/Posit Community forum with ggplot2 tag</a></li>
-<li><a href="https://stackoverflow.com/questions/tagged/ggplot2">Stackoverflow with ggplot2 tag</a></li>
+<li><p>The text on the bar shows the percentage out of 25,422,813 Australian residents born in that place.</p></li>
+<li><p>There were 5.3% of Australian residents who did not state their birth place.</p></li>
+<li><p>The top country of birth place is Australia with 66.9% of Australian residents born in Australia.</p></li>
 </ul>
-</section></section>
-<section id="keep-a-local-copy-of-the-workshop-material" class="title-slide slide level1 center" data-background-color="#D93F00">
-<h1><i class="fas fa-download"></i> Keep a local copy of the workshop material!</h1>
-<p><code>&gt;</code> Download the zip file <a href="https://github.com/emitanaka/EDVR-workshop/archive/refs/heads/master.zip">here</a><br>
-<code>&gt;</code> Open the <code>docs/index.html</code> in a browser</p>
+<p><i class="fa-solid fa-newspaper"></i> Story from <a href="https://www.theguardian.com/australia-news/2022/jun/28/india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show">The Guardian</a>.</p>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<style type="text/css">
+.reveal h2 {
+  font-size: 34px!important;
+}
+</style>
+</div>
 
 <p><img src="images/monash-one-line-black-rgb.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

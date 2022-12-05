@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="94 101 916 501" width="916" height="501">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 6 6" markerWidth="6" markerHeight="6" color="black">
+      <g>
+        <path d="M 3.7333333 0 L 0 0 M 0 -1.4 L 3.7333333 0 L 0 1.4" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -2 5 4" markerWidth="5" markerHeight="4" color="black">
+      <g>
+        <path d="M 2.5142857 0 L 0 0 M 0 -.9428571 L 2.5142857 0 L 0 .9428571" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke="none" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1" fill="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="94" y="101" width="916" height="501"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_3">
+        <path d="M 123 299.5 L 283.5 299.5 C 284.60457 299.5 285.5 300.39543 285.5 301.5 L 285.5 410.5 C 285.5 411.60457 284.60457 412.5 283.5 412.5 L 123 412.5 C 121.89543 412.5 121 411.60457 121 410.5 L 121 301.5 C 121 300.39543 121.89543 299.5 123 299.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <text transform="translate(126 322.216)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="20.718" y="27">Attention </tspan>
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="29.79" y="60.784">capture</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <path d="M 345.5 299.5 L 506 299.5 C 507.10457 299.5 508 300.39543 508 301.5 L 508 410.5 C 508 411.60457 507.10457 412.5 506 412.5 L 345.5 412.5 C 344.39543 412.5 343.5 411.60457 343.5 410.5 L 343.5 301.5 C 343.5 300.39543 344.39543 299.5 345.5 299.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <text transform="translate(348.5 339.108)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="18.128" y="27">Encoding</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <path d="M 593 299.5 L 753.5 299.5 C 754.6046 299.5 755.5 300.39543 755.5 301.5 L 755.5 410.5 C 755.5 411.60457 754.6046 412.5 753.5 412.5 L 593 412.5 C 591.8954 412.5 591 411.60457 591 410.5 L 591 301.5 C 591 300.39543 591.8954 299.5 593 299.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <text transform="translate(596 322.216)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="13.186" y="27">Long term </tspan>
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="26.15" y="60.784">memory</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <path d="M 597.5 486.5 L 758 486.5 C 759.1046 486.5 760 487.39543 760 488.5 L 760 597.5 C 760 598.6046 759.1046 599.5 758 599.5 L 597.5 599.5 C 596.3954 599.5 595.5 598.6046 595.5 597.5 L 595.5 488.5 C 595.5 487.39543 596.3954 486.5 597.5 486.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <text transform="translate(600.5 509.216)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="31.624" y="27">Pattern </tspan>
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="7.502" y="60.784">recognition</tspan>
+        </text>
+      </g>
+      <g id="Graphic_7">
+        <path d="M 593 103 L 753.5 103 C 754.6046 103 755.5 103.89543 755.5 105 L 755.5 214 C 755.5 215.10457 754.6046 216 753.5 216 L 593 216 C 591.8954 216 591 215.10457 591 214 L 591 105 C 591 103.89543 591.8954 103 593 103 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <text transform="translate(596 125.716)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="26.192" y="27">Working </tspan>
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="26.15" y="60.784">memory</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8">
+        <path d="M 845 294.5 L 1005.5 294.5 C 1006.6046 294.5 1007.5 295.39543 1007.5 296.5 L 1007.5 405.5 C 1007.5 406.60457 1006.6046 407.5 1005.5 407.5 L 845 407.5 C 843.8954 407.5 843 406.60457 843 405.5 L 843 296.5 C 843 295.39543 843.8954 294.5 845 294.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <text transform="translate(848 334.108)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="28" fill="black" x="23.322" y="27">Decision</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <text transform="translate(99.69 141.0649)" fill="black">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="30" fill="black" x="0" y="29">Stimulus (Plot)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <text transform="translate(853.865 524.5649)" fill="black">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="30" fill="black" x="22737368e-20" y="29">Response</tspan>
+        </text>
+      </g>
+      <g id="Line_11">
+        <line x1="203.25" y1="182.9351" x2="203.25" y2="281.6" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_12">
+        <line x1="229.78593" y1="182.9351" x2="347.5918" y2="286.9749" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_13">
+        <line x1="287.5" y1="356" x2="325.6" y2="356" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_14">
+        <line x1="510" y1="356" x2="573.1" y2="356" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_15">
+        <line x1="504.5842" y1="414.5" x2="586.1473" y2="475.025" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_16">
+        <line x1="676.34225" y1="484.5" x2="675.0403" y2="430.3954" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_17">
+        <line x1="673.25" y1="218" x2="673.25" y2="281.6" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_18">
+        <line x1="499.4332" y1="297.5" x2="587.11425" y2="227.88656" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_19">
+        <line x1="750.2317" y1="218" x2="835.6088" y2="282.8798" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_21">
+        <line x1="919" y1="287" x2="772.8065" y2="179.42362" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_22">
+        <line x1="925.25" y1="409.5" x2="925.25" y2="503.6649" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_23">
+        <line x1="753.1602" y1="484.5" x2="837.2769" y2="419.24583" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_25">
+        <line x1="575" y1="185.5" x2="472.58953" y2="269.32793" marker-end="url(#StickArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+      </g>
+      <g id="Line_26">
+        <line x1="696" y1="291.1799" x2="696.56506" y2="248.99954" marker-end="url(#StickArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+      </g>
+      <g id="Line_27">
+        <line x1="696.3058" y1="416.21904" x2="696.6286" y2="458.40194" marker-end="url(#StickArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+      </g>
+    </g>
+  </g>
+</svg>
